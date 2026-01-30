@@ -1,0 +1,2746 @@
+   Input file: C:\Users\weissd2k\OneDrive - Imperial College London\5 Teaching\Lectures\LabCourseEnvironGeochemistry\Modules\Ch 12 Adsorption Surface Complexation Models\Model answers\04 Surface Complexation.pqi
+  Output file: C:\Users\weissd2k\OneDrive - Imperial College London\5 Teaching\Lectures\LabCourseEnvironGeochemistry\Modules\Ch 12 Adsorption Surface Complexation Models\Model answers\04 Surface Complexationv2.pqo
+Database file: C:\Program Files (x86)\USGS\Phreeqc Interactive 3.7.3-15968\database\llnl.dat
+
+------------------
+Reading data base.
+------------------
+
+	LLNL_AQUEOUS_MODEL_PARAMETERS
+	NAMED_EXPRESSIONS
+	SOLUTION_MASTER_SPECIES
+	SOLUTION_SPECIES
+	PHASES
+	EXCHANGE_MASTER_SPECIES
+	EXCHANGE_SPECIES
+	SURFACE_MASTER_SPECIES
+	SURFACE_SPECIES
+	RATES
+	END
+------------------------------------
+Reading input data for simulation 1.
+------------------------------------
+
+	DATABASE C:\Program Files (x86)\USGS\Phreeqc Interactive 3.7.3-15968\database\llnl.dat
+	TITLE 04_SURFACE_COMPLEXATION
+	SOLUTION_MASTER_SPECIES
+	As(+5)	H2AsO4-		0.0	As	74.92
+	END
+-----
+TITLE
+-----
+
+ 04_SURFACE_COMPLEXATION
+
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 2.
+------------------------------------
+
+	SOLUTION_SPECIES
+	AsO4-3 + H+ = HAsO4-2
+	log_k		11.60
+	AsO4-3 + 2H+ = H2AsO4-
+	log_k		18.35
+	AsO4-3 + 3H+ = H3AsO4
+	log_k		20.60
+	SURFACE_MASTER_SPECIES 
+	Surf_ Surf_OH
+	SURFACE_SPECIES
+	Surf_OH = Surf_OH   						 #goethite surface protonation reactions 
+	log_k		0.0
+	Surf_OH + H+ = Surf_OH2+
+	log_k		7.47
+	Surf_OH = Surf_O- + H+
+	log_k		-9.51            
+	Surf_OH + AsO4-3 + 3H+ = Surf_H2AsO4 + H2O		#goethite surface complexation reactions
+	log_k		31.00
+	Surf_OH + AsO4-3 + 2H+ = Surf_HAsO4- + H2O
+	log_k		26.81
+	Surf_OH + AsO4-3 + H+ = Surf_AsO4-2 + H2O
+	log_k		20.22
+	END
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 3.
+------------------------------------
+
+	SURFACE 1 
+	      sites DENSITY	
+		Surf_OH		2.0     54     0.5		#name of binding site, (sites/site density), specific area per gram, grams
+	END
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 4.
+------------------------------------
+
+	SELECTED_OUTPUT
+	file			output.xls
+	reset		true
+	molalities		AsO4-3   HAsO4-2   H2AsO4-   H3AsO4   Surf_AsO4-2  Surf_HAsO4-    Surf_H2AsO4
+	END
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 5.
+------------------------------------
+
+	SOLUTION 1
+	pH		3.0
+	Cl		0.1		mol/kgw
+	Na		0.1		mol/kgw
+	As(+5)	0.100 	mmol/kgw
+	END
+-------------------------------------------
+Beginning of initial solution calculations.
+-------------------------------------------
+
+Initial solution 1.	
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As(5)             1.000e-04   1.000e-04
+	Cl                1.000e-01   1.000e-01
+	Na                1.000e-01   1.000e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   3.000    
+                                       pe  =   4.000    
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.962e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =  -1.232e-03
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.132e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.57
+                               Iterations  =   4
+                                  Total H  = 1.110521e+02
+                                  Total O  = 5.552573e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   H+              1.201e-03   1.000e-03    -2.921    -3.000    -0.079      0.00
+   OH-             1.249e-11   9.602e-12   -10.903   -11.018    -0.114     (0)  
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     (0)  
+As(5)         1.000e-04
+   H2AsO4-         8.577e-05   8.577e-05    -4.067    -4.067    -0.000     (0)  
+   H3AsO4          1.421e-05   1.454e-05    -4.847    -4.837     0.010     (0)  
+   HAsO4-2         1.454e-08   1.454e-08    -7.837    -7.837    -0.000     (0)  
+   AsO4-3          3.847e-16   3.653e-17   -15.415   -16.437    -1.022     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.897e-02   7.525e-02    -1.005    -1.124    -0.119     (0)  
+   NaCl            1.016e-03   1.016e-03    -2.993    -2.993     0.000     (0)  
+   HCl             1.690e-05   1.690e-05    -4.772    -4.772     0.000     (0)  
+Cl(1)         0.000e+00
+   HClO            0.000e+00   0.000e+00   -40.664   -40.664     0.000     (0)  
+   ClO-            0.000e+00   0.000e+00   -45.124   -45.233    -0.110     (0)  
+Cl(3)         0.000e+00
+   HClO2           0.000e+00   0.000e+00   -82.068   -82.068     0.000     (0)  
+   ClO2-           0.000e+00   0.000e+00   -82.128   -82.238    -0.110     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00  -105.276  -105.390    -0.114     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00  -132.730  -132.845    -0.114     (0)  
+H(0)          1.549e-17
+   H2              7.747e-18   7.935e-18   -17.111   -17.100     0.010     (0)  
+Na            1.000e-01
+   Na+             9.898e-02   7.684e-02    -1.004    -1.114    -0.110     (0)  
+   NaCl            1.016e-03   1.016e-03    -2.993    -2.993     0.000     (0)  
+   NaOH            1.273e-13   1.273e-13   -12.895   -12.895     0.000     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -58.008   -57.998     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  As2O5           -16.26    -14.13    2.14  As2O5
+  Cl2(g)          -40.24    -37.24    2.99  Cl2
+  H2(g)           -14.00    -17.10   -3.10  H2
+  H2O(g)           -1.59     -0.00    1.59  H2O
+  Halite           -3.80     -2.24    1.56  NaCl
+  HCl(g)          -10.43     -4.12    6.30  HCl
+  Ice              -0.14     -0.00    0.14  H2O
+  Na              -50.99     16.38   67.37  Na
+  Na(g)           -64.47     16.38   80.86  Na
+  Na2O            -63.65      3.77   67.42  Na2O
+  O2(g)           -55.11    -58.00   -2.89  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 6.
+------------------------------------
+
+	PHASES 
+	     Fix_H+ 
+	     H+ = H+ 
+	     log_k  0.0 		#pseudo-
+	END 
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 7.
+------------------------------------
+
+	USE SURFACE 1
+	USE SOLUTION 1
+	EQUILIBRIUM_PHASES 1
+		Fix_H+ -3.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+	END
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	
+Using surface 1.	
+Using pure phase assemblage 1.	
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Fix_H+           -3.00    -3.00      0.00
+	 NaOH               is reactant       1.100e+01   1.100e+01   6.991e-05
+
+------------------------------Surface composition------------------------------
+
+Diffuse Double Layer Surface-Complexation Model
+
+Surf          
+	  3.592e-06  Surface charge, eq
+	  1.284e-02  sigma, C/m²
+	  1.747e-02  psi, V
+	 -6.798e-01  -F*psi/RT
+	  5.067e-01  exp(-F*psi/RT)
+	  5.400e+01  specific area, m²/g
+	  2.700e+01  m² for   5.000e-01 g
+
+
+Surf_         
+	  8.966e-05  moles
+	                                   Mole                     Log
+	Species               Moles    Fraction    Molality    Molality
+
+	Surf_H2AsO4       6.858e-05       0.765   6.858e-05      -4.164
+	Surf_OH2+         1.234e-05       0.138   1.234e-05      -4.909
+	Surf_HAsO4-       8.739e-06       0.097   8.739e-06      -5.059
+	Surf_AsO4-2       4.433e-09       0.000   4.433e-09      -8.353
+	Surf_OH           8.252e-10       0.000   8.252e-10      -9.083
+	Surf_O-           5.033e-16       0.000   5.033e-16     -15.298
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As                2.268e-05   2.268e-05
+	Cl                1.000e-01   1.000e-01
+	Na                9.993e-02   9.993e-02
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   3.000      Charge balance
+                                       pe  =  10.245      Adjusted to redox equilibrium
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.955e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =  -1.221e-03
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.128e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.57
+                               Iterations  =  20
+                                  Total H  = 1.110519e+02
+                                  Total O  = 5.552542e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   H+              1.201e-03   1.000e-03    -2.921    -3.000    -0.079      0.00
+   OH-             1.249e-11   9.602e-12   -10.903   -11.018    -0.114     (0)  
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     (0)  
+As(-3)        0.000e+00
+   AsH3            0.000e+00   0.000e+00   -96.874   -96.874     0.000     (0)  
+As(3)         6.481e-13
+   HAsO2           3.463e-13   3.463e-13   -12.461   -12.461     0.000     (0)  
+   As(OH)3         3.018e-13   3.018e-13   -12.520   -12.520     0.000     (0)  
+   H2AsO3-         2.377e-19   1.846e-19   -18.624   -18.734    -0.110     (0)  
+   AsO2-           2.280e-19   1.770e-19   -18.642   -18.752    -0.110     (0)  
+   AsO2OH-2        5.106e-27   1.803e-27   -26.292   -26.744    -0.452     (0)  
+As(5)         2.268e-05
+   H2AsO4-         1.945e-05   1.945e-05    -4.711    -4.711    -0.000     (0)  
+   H3AsO4          3.223e-06   3.297e-06    -5.492    -5.482     0.010     (0)  
+   HAsO4-2         3.297e-09   3.297e-09    -8.482    -8.482    -0.000     (0)  
+   AsO4-3          8.718e-17   8.283e-18   -16.060   -17.082    -1.022     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.897e-02   7.525e-02    -1.005    -1.123    -0.119     (0)  
+   NaCl            1.016e-03   1.016e-03    -2.993    -2.993     0.000     (0)  
+   HCl             1.690e-05   1.690e-05    -4.772    -4.772     0.000     (0)  
+Cl(1)         6.690e-29
+   HClO            6.690e-29   6.690e-29   -28.175   -28.175     0.000     (0)  
+   ClO-            2.324e-33   1.804e-33   -32.634   -32.744    -0.110     (0)  
+Cl(3)         0.000e+00
+   HClO2           0.000e+00   0.000e+00   -57.089   -57.089     0.000     (0)  
+   ClO2-           0.000e+00   0.000e+00   -57.149   -57.259    -0.110     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -67.807   -67.921    -0.114     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00   -82.772   -82.886    -0.114     (0)  
+H(0)          5.018e-30
+   H2              2.509e-30   2.570e-30   -29.600   -29.590     0.010     (0)  
+Na            9.993e-02
+   Na+             9.891e-02   7.679e-02    -1.005    -1.115    -0.110     (0)  
+   NaCl            1.016e-03   1.016e-03    -2.993    -2.993     0.000     (0)  
+   NaOH            1.272e-13   1.272e-13   -12.895   -12.895     0.000     (0)  
+O(0)          1.870e-33
+   O2              9.352e-34   9.578e-34   -33.029   -33.019     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Arsenolite      -23.62    -43.46  -19.84  As2O3
+  As              -39.65      3.03   42.68  As
+  As2O5           -17.55    -15.42    2.14  As2O5
+  As4O6(cubi)     -47.10    -86.93  -39.82  As4O6
+  As4O6(mono)     -46.88    -86.93  -40.05  As4O6
+  Cl2(g)          -27.75    -24.75    2.99  Cl2
+  Claudetite      -23.67    -43.46  -19.80  As2O3
+  Fix_H+           -3.00     -3.00    0.00  H+
+  H2(g)           -26.49    -29.59   -3.10  H2
+  H2O(g)           -1.59     -0.00    1.59  H2O
+  Halite           -3.80     -2.24    1.56  NaCl
+  HCl(g)          -10.43     -4.12    6.30  HCl
+  Ice              -0.14     -0.00    0.14  H2O
+  Na              -57.23     10.14   67.37  Na
+  Na(g)           -70.72     10.14   80.86  Na
+  Na2O            -63.65      3.77   67.42  Na2O
+  O2(g)           -30.13    -33.02   -2.89  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 8.
+------------------------------------
+
+	USE SURFACE 1
+	USE SOLUTION 1
+	EQUILIBRIUM_PHASES 1
+		Fix_H+ -3.5 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+	END
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	
+Using surface 1.	
+Using pure phase assemblage 1.	
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Fix_H+           -3.50    -3.50      0.00
+	 NaOH               is reactant       1.100e+01   1.100e+01  -7.700e-04
+
+------------------------------Surface composition------------------------------
+
+Diffuse Double Layer Surface-Complexation Model
+
+Surf          
+	  7.453e-07  Surface charge, eq
+	  2.664e-03  sigma, C/m²
+	  3.691e-03  psi, V
+	 -1.437e-01  -F*psi/RT
+	  8.662e-01  exp(-F*psi/RT)
+	  5.400e+01  specific area, m²/g
+	  2.700e+01  m² for   5.000e-01 g
+
+
+Surf_         
+	  8.966e-05  moles
+	                                   Mole                     Log
+	Species               Moles    Fraction    Molality    Molality
+
+	Surf_H2AsO4       6.040e-05       0.674   6.040e-05      -4.219
+	Surf_OH2+         1.501e-05       0.167   1.501e-05      -4.824
+	Surf_HAsO4-       1.424e-05       0.159   1.424e-05      -4.847
+	Surf_AsO4-2       1.336e-08       0.000   1.336e-08      -7.874
+	Surf_OH           1.857e-09       0.000   1.857e-09      -8.731
+	Surf_O-           2.095e-15       0.000   2.095e-15     -14.679
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As                2.535e-05   2.535e-05
+	Cl                1.000e-01   1.000e-01
+	Na                1.008e-01   1.008e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   3.500      Charge balance
+                                       pe  =   9.541      Adjusted to redox equilibrium
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.956e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =  -3.862e-04
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.131e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.57
+                               Iterations  =  20
+                                  Total H  = 1.110528e+02
+                                  Total O  = 5.552627e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   H+              3.796e-04   3.162e-04    -3.421    -3.500    -0.079      0.00
+   OH-             3.951e-11   3.036e-11   -10.403   -10.518    -0.114     (0)  
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     (0)  
+As(-3)        0.000e+00
+   AsH3            0.000e+00   0.000e+00   -95.650   -95.650     0.000     (0)  
+As(3)         6.488e-13
+   HAsO2           3.467e-13   3.467e-13   -12.460   -12.460     0.000     (0)  
+   As(OH)3         3.021e-13   3.021e-13   -12.520   -12.520     0.000     (0)  
+   H2AsO3-         7.526e-19   5.842e-19   -18.123   -18.233    -0.110     (0)  
+   AsO2-           7.219e-19   5.604e-19   -18.142   -18.251    -0.110     (0)  
+   AsO2OH-2        5.112e-26   1.805e-26   -25.291   -25.744    -0.452     (0)  
+As(5)         2.535e-05
+   H2AsO4-         2.407e-05   2.407e-05    -4.618    -4.618    -0.000     (0)  
+   H3AsO4          1.261e-06   1.291e-06    -5.899    -5.889     0.010     (0)  
+   HAsO4-2         1.291e-08   1.291e-08    -7.889    -7.889    -0.000     (0)  
+   AsO4-3          1.079e-15   1.025e-16   -14.967   -15.989    -1.022     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.897e-02   7.525e-02    -1.005    -1.123    -0.119     (0)  
+   NaCl            1.024e-03   1.024e-03    -2.990    -2.990     0.000     (0)  
+   HCl             5.345e-06   5.345e-06    -5.272    -5.272     0.000     (0)  
+Cl(1)         8.272e-30
+   HClO            8.271e-30   8.271e-30   -29.082   -29.082     0.000     (0)  
+   ClO-            9.085e-34   7.053e-34   -33.042   -33.152    -0.110     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -57.964   -58.074    -0.110     (0)  
+   HClO2           0.000e+00   0.000e+00   -58.405   -58.405     0.000     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -69.031   -69.145    -0.114     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00   -84.403   -84.517    -0.114     (0)  
+H(0)          1.284e-29
+   H2              6.418e-30   6.573e-30   -29.193   -29.182     0.010     (0)  
+Na            1.008e-01
+   Na+             9.974e-02   7.743e-02    -1.001    -1.111    -0.110     (0)  
+   NaCl            1.024e-03   1.024e-03    -2.990    -2.990     0.000     (0)  
+   NaOH            4.056e-13   4.056e-13   -12.392   -12.392     0.000     (0)  
+O(0)          2.859e-34
+   O2              1.429e-34   1.464e-34   -33.845   -33.834     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Arsenolite      -23.62    -43.46  -19.84  As2O3
+  As              -39.04      3.64   42.68  As
+  As2O5           -18.37    -16.23    2.14  As2O5
+  As4O6(cubi)     -47.10    -86.92  -39.82  As4O6
+  As4O6(mono)     -46.87    -86.92  -40.05  As4O6
+  Cl2(g)          -29.16    -26.16    2.99  Cl2
+  Claudetite      -23.67    -43.46  -19.80  As2O3
+  Fix_H+           -3.50     -3.50    0.00  H+
+  H2(g)           -26.08    -29.18   -3.10  H2
+  H2O(g)           -1.59     -0.00    1.59  H2O
+  Halite           -3.80     -2.23    1.56  NaCl
+  HCl(g)          -10.93     -4.62    6.30  HCl
+  Ice              -0.14     -0.00    0.14  H2O
+  Na              -56.52     10.85   67.37  Na
+  Na(g)           -70.01     10.85   80.86  Na
+  Na2O            -62.64      4.78   67.42  Na2O
+  O2(g)           -30.94    -33.83   -2.89  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 9.
+------------------------------------
+
+	USE SURFACE 1
+	USE SOLUTION 1
+	EQUILIBRIUM_PHASES 1
+		Fix_H+ -4.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+	END
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	
+Using surface 1.	
+Using pure phase assemblage 1.	
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Fix_H+           -4.00    -4.00      0.00
+	 NaOH               is reactant       1.100e+01   1.100e+01  -1.041e-03
+
+------------------------------Surface composition------------------------------
+
+Diffuse Double Layer Surface-Complexation Model
+
+Surf          
+	 -2.271e-06  Surface charge, eq
+	 -8.116e-03  sigma, C/m²
+	 -1.117e-02  psi, V
+	  4.347e-01  -F*psi/RT
+	  1.545e+00  exp(-F*psi/RT)
+	  5.400e+01  specific area, m²/g
+	  2.700e+01  m² for   5.000e-01 g
+
+
+Surf_         
+	  8.966e-05  moles
+	                                   Mole                     Log
+	Species               Moles    Fraction    Molality    Molality
+
+	Surf_H2AsO4       5.001e-05       0.558   5.001e-05      -4.301
+	Surf_HAsO4-       2.091e-05       0.233   2.091e-05      -4.680
+	Surf_OH2+         1.870e-05       0.209   1.870e-05      -4.728
+	Surf_AsO4-2       3.479e-08       0.000   3.479e-08      -7.459
+	Surf_OH           4.103e-09       0.000   4.103e-09      -8.387
+	Surf_O-           8.210e-15       0.000   8.210e-15     -14.086
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As                2.904e-05   2.905e-05
+	Cl                1.000e-01   1.000e-01
+	Na                1.010e-01   1.010e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   4.000      Charge balance
+                                       pe  =   8.828      Adjusted to redox equilibrium
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.957e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =  -1.222e-04
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.134e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.57
+                               Iterations  =  20
+                                  Total H  = 1.110531e+02
+                                  Total O  = 5.552655e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   H+              1.201e-04   1.000e-04    -3.921    -4.000    -0.079      0.00
+   OH-             1.249e-10   9.602e-11    -9.903   -10.018    -0.114     (0)  
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     (0)  
+As(-3)        0.000e+00
+   AsH3            0.000e+00   0.000e+00   -94.369   -94.369     0.000     (0)  
+As(3)         6.495e-13
+   HAsO2           3.471e-13   3.471e-13   -12.460   -12.460     0.000     (0)  
+   As(OH)3         3.024e-13   3.024e-13   -12.519   -12.519     0.000     (0)  
+   H2AsO3-         2.382e-18   1.849e-18   -17.623   -17.733    -0.110     (0)  
+   AsO2-           2.285e-18   1.774e-18   -17.641   -17.751    -0.110     (0)  
+   AsO2OH-2        5.117e-25   1.807e-25   -24.291   -24.743    -0.452     (0)  
+As(5)         2.904e-05
+   H2AsO4-         2.852e-05   2.852e-05    -4.545    -4.545    -0.000     (0)  
+   H3AsO4          4.726e-07   4.836e-07    -6.326    -6.316     0.010     (0)  
+   HAsO4-2         4.836e-08   4.836e-08    -7.316    -7.316    -0.000     (0)  
+   AsO4-3          1.279e-14   1.215e-15   -13.893   -14.916    -1.022     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.897e-02   7.525e-02    -1.004    -1.123    -0.119     (0)  
+   NaCl            1.027e-03   1.027e-03    -2.988    -2.988     0.000     (0)  
+   HCl             1.690e-06   1.690e-06    -5.772    -5.772     0.000     (0)  
+Cl(1)         9.793e-31
+   HClO            9.790e-31   9.790e-31   -30.009   -30.009     0.000     (0)  
+   ClO-            3.400e-34   2.640e-34   -33.468   -33.578    -0.110     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -58.818   -58.928    -0.110     (0)  
+   HClO2           0.000e+00   0.000e+00   -59.758   -59.758     0.000     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -70.311   -70.425    -0.114     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00   -86.110   -86.224    -0.114     (0)  
+H(0)          3.429e-29
+   H2              1.715e-29   1.756e-29   -28.766   -28.755     0.010     (0)  
+Na            1.010e-01
+   Na+             1.000e-01   7.764e-02    -1.000    -1.110    -0.110     (0)  
+   NaCl            1.027e-03   1.027e-03    -2.988    -2.988     0.000     (0)  
+   NaOH            1.286e-12   1.286e-12   -11.891   -11.891     0.000     (0)  
+O(0)          4.005e-35
+   O2              2.003e-35   2.051e-35   -34.698   -34.688     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Arsenolite      -23.62    -43.46  -19.84  As2O3
+  As              -38.40      4.29   42.68  As
+  As2O5           -19.22    -17.09    2.14  As2O5
+  As4O6(cubi)     -47.10    -86.92  -39.82  As4O6
+  As4O6(mono)     -46.87    -86.92  -40.05  As4O6
+  Cl2(g)          -30.58    -27.59    2.99  Cl2
+  Claudetite      -23.67    -43.46  -19.80  As2O3
+  Fix_H+           -4.00     -4.00    0.00  H+
+  H2(g)           -25.65    -28.76   -3.10  H2
+  H2O(g)           -1.59     -0.00    1.59  H2O
+  Halite           -3.80     -2.23    1.56  NaCl
+  HCl(g)          -11.43     -5.12    6.30  HCl
+  Ice              -0.14     -0.00    0.14  H2O
+  Na              -55.81     11.56   67.37  Na
+  Na(g)           -69.30     11.56   80.86  Na
+  Na2O            -61.64      5.78   67.42  Na2O
+  O2(g)           -31.80    -34.69   -2.89  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+-------------------------------------
+Reading input data for simulation 10.
+-------------------------------------
+
+	USE SURFACE 1
+	USE SOLUTION 1
+	EQUILIBRIUM_PHASES 1
+		Fix_H+ -4.5 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+	END
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	
+Using surface 1.	
+Using pure phase assemblage 1.	
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Fix_H+           -4.50    -4.50      0.00
+	 NaOH               is reactant       1.100e+01   1.100e+01  -1.132e-03
+
+------------------------------Surface composition------------------------------
+
+Diffuse Double Layer Surface-Complexation Model
+
+Surf          
+	 -5.571e-06  Surface charge, eq
+	 -1.991e-02  sigma, C/m²
+	 -2.643e-02  psi, V
+	  1.029e+00  -F*psi/RT
+	  2.798e+00  exp(-F*psi/RT)
+	  5.400e+01  specific area, m²/g
+	  2.700e+01  m² for   5.000e-01 g
+
+
+Surf_         
+	  8.966e-05  moles
+	                                   Mole                     Log
+	Species               Moles    Fraction    Molality    Molality
+
+	Surf_H2AsO4       3.862e-05       0.431   3.862e-05      -4.413
+	Surf_HAsO4-       2.818e-05       0.314   2.818e-05      -4.550
+	Surf_OH2+         2.277e-05       0.254   2.277e-05      -4.643
+	Surf_AsO4-2       8.187e-08       0.001   8.187e-08      -7.087
+	Surf_OH           8.721e-09       0.000   8.721e-09      -8.059
+	Surf_O-           3.046e-14       0.000   3.046e-14     -13.516
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As                3.312e-05   3.312e-05
+	Cl                1.000e-01   1.000e-01
+	Na                1.011e-01   1.011e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   4.500      Charge balance
+                                       pe  =   8.035      Adjusted to redox equilibrium
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.957e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =  -3.849e-05
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.137e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.57
+                               Iterations  =  20
+                                  Total H  = 1.110532e+02
+                                  Total O  = 5.552666e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   H+              3.796e-05   3.162e-05    -4.421    -4.500    -0.079      0.00
+   OH-             3.951e-10   3.036e-10    -9.403    -9.518    -0.114     (0)  
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     (0)  
+As(-3)        0.000e+00
+   AsH3            0.000e+00   0.000e+00   -92.468   -92.468     0.000     (0)  
+As(3)         9.079e-13
+   HAsO2           4.852e-13   4.852e-13   -12.314   -12.314     0.000     (0)  
+   As(OH)3         4.228e-13   4.228e-13   -12.374   -12.374     0.000     (0)  
+   H2AsO3-         1.053e-17   8.176e-18   -16.978   -17.087    -0.110     (0)  
+   AsO2-           1.010e-17   7.843e-18   -16.996   -17.106    -0.110     (0)  
+   AsO2OH-2        7.154e-24   2.526e-24   -23.145   -23.598    -0.452     (0)  
+As(5)         3.312e-05
+   H2AsO4-         3.277e-05   3.277e-05    -4.485    -4.485    -0.000     (0)  
+   HAsO4-2         1.757e-07   1.757e-07    -6.755    -6.755    -0.000     (0)  
+   H3AsO4          1.717e-07   1.757e-07    -6.765    -6.755     0.010     (0)  
+   AsO4-3          1.469e-13   1.395e-14   -12.833   -13.855    -1.022     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.897e-02   7.525e-02    -1.004    -1.123    -0.119     (0)  
+   NaCl            1.028e-03   1.028e-03    -2.988    -2.988     0.000     (0)  
+   HCl             5.345e-07   5.345e-07    -6.272    -6.272     0.000     (0)  
+Cl(1)         8.054e-32
+   HClO            8.045e-32   8.045e-32   -31.094   -31.094     0.000     (0)  
+   ClO-            8.837e-35   6.860e-35   -34.054   -34.164    -0.110     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -59.988   -60.098    -0.110     (0)  
+   HClO2           0.000e+00   0.000e+00   -61.429   -61.429     0.000     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -72.067   -72.181    -0.114     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00   -88.451   -88.565    -0.114     (0)  
+H(0)          1.319e-28
+   H2              6.597e-29   6.757e-29   -28.181   -28.170     0.010     (0)  
+Na            1.011e-01
+   Na+             1.001e-01   7.771e-02    -1.000    -1.110    -0.110     (0)  
+   NaCl            1.028e-03   1.028e-03    -2.988    -2.988     0.000     (0)  
+   NaOH            4.071e-12   4.071e-12   -11.390   -11.390     0.000     (0)  
+O(0)          2.705e-36
+   O2              1.353e-36   1.385e-36   -35.869   -35.858     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Arsenolite      -23.33    -43.17  -19.84  As2O3
+  As              -37.37      5.31   42.68  As
+  As2O5           -20.10    -17.96    2.14  As2O5
+  As4O6(cubi)     -46.52    -86.34  -39.82  As4O6
+  As4O6(mono)     -46.29    -86.34  -40.05  As4O6
+  Cl2(g)          -32.17    -29.17    2.99  Cl2
+  Claudetite      -23.38    -43.17  -19.80  As2O3
+  Fix_H+           -4.50     -4.50    0.00  H+
+  H2(g)           -25.07    -28.17   -3.10  H2
+  H2O(g)           -1.59     -0.00    1.59  H2O
+  Halite           -3.80     -2.23    1.56  NaCl
+  HCl(g)          -11.93     -5.62    6.30  HCl
+  Ice              -0.14     -0.00    0.14  H2O
+  Na              -55.02     12.35   67.37  Na
+  Na(g)           -68.50     12.35   80.86  Na
+  Na2O            -60.64      6.78   67.42  Na2O
+  O2(g)           -32.97    -35.86   -2.89  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+-------------------------------------
+Reading input data for simulation 11.
+-------------------------------------
+
+	USE SURFACE 1
+	USE SOLUTION 1
+	EQUILIBRIUM_PHASES 1
+		Fix_H+ -5.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+	END
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	
+Using surface 1.	
+Using pure phase assemblage 1.	
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Fix_H+           -5.00    -5.00      0.00
+	 NaOH               is reactant       1.100e+01   1.100e+01  -1.166e-03
+
+------------------------------Surface composition------------------------------
+
+Diffuse Double Layer Surface-Complexation Model
+
+Surf          
+	 -9.308e-06  Surface charge, eq
+	 -3.327e-02  sigma, C/m²
+	 -4.148e-02  psi, V
+	  1.615e+00  -F*psi/RT
+	  5.026e+00  exp(-F*psi/RT)
+	  5.400e+01  specific area, m²/g
+	  2.700e+01  m² for   5.000e-01 g
+
+
+Surf_         
+	  8.966e-05  moles
+	                                   Mole                     Log
+	Species               Moles    Fraction    Molality    Molality
+
+	Surf_HAsO4-       3.542e-05       0.395   3.542e-05      -4.451
+	Surf_H2AsO4       2.757e-05       0.308   2.757e-05      -4.560
+	Surf_OH2+         2.647e-05       0.295   2.647e-05      -4.577
+	Surf_AsO4-2       1.811e-07       0.002   1.811e-07      -6.742
+	Surf_OH           1.785e-08       0.000   1.785e-08      -7.748
+	Surf_O-           1.097e-13       0.000   1.097e-13     -12.960
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As                3.683e-05   3.683e-05
+	Cl                1.000e-01   1.000e-01
+	Na                1.012e-01   1.012e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   5.000      Charge balance
+                                       pe  =   7.484      Adjusted to redox equilibrium
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.958e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =  -1.162e-05
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.141e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.57
+                               Iterations  =  21
+                                  Total H  = 1.110532e+02
+                                  Total O  = 5.552670e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   H+              1.201e-05   1.000e-05    -4.921    -5.000    -0.079      0.00
+   OH-             1.249e-09   9.602e-10    -8.903    -9.018    -0.114     (0)  
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     (0)  
+As(-3)        0.000e+00
+   AsH3            0.000e+00   0.000e+00   -92.517   -92.517     0.000     (0)  
+As(3)         4.007e-13
+   HAsO2           2.141e-13   2.141e-13   -12.669   -12.669     0.000     (0)  
+   As(OH)3         1.866e-13   1.866e-13   -12.729   -12.729     0.000     (0)  
+   H2AsO3-         1.470e-17   1.141e-17   -16.833   -16.943    -0.110     (0)  
+   AsO2-           1.410e-17   1.095e-17   -16.851   -16.961    -0.110     (0)  
+   AsO2OH-2        3.157e-23   1.115e-23   -22.501   -22.953    -0.452     (0)  
+As(5)         3.683e-05
+   H2AsO4-         3.615e-05   3.615e-05    -4.442    -4.442    -0.000     (0)  
+   HAsO4-2         6.129e-07   6.129e-07    -6.213    -6.213    -0.000     (0)  
+   H3AsO4          5.990e-08   6.129e-08    -7.223    -7.213     0.010     (0)  
+   AsO4-3          1.621e-12   1.540e-13   -11.790   -12.813    -1.022     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.897e-02   7.525e-02    -1.004    -1.123    -0.119     (0)  
+   NaCl            1.028e-03   1.028e-03    -2.988    -2.988     0.000     (0)  
+   HCl             1.690e-07   1.690e-07    -6.772    -6.772     0.000     (0)  
+Cl(1)         2.018e-32
+   HClO            2.011e-32   2.011e-32   -31.697   -31.697     0.000     (0)  
+   ClO-            6.986e-35   5.423e-35   -34.156   -34.266    -0.110     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -60.193   -60.303    -0.110     (0)  
+   HClO2           0.000e+00   0.000e+00   -62.133   -62.133     0.000     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -72.373   -72.487    -0.114     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00   -88.859   -88.974    -0.114     (0)  
+H(0)          1.669e-28
+   H2              8.346e-29   8.547e-29   -28.079   -28.068     0.010     (0)  
+Na            1.012e-01
+   Na+             1.001e-01   7.774e-02    -0.999    -1.109    -0.110     (0)  
+   NaCl            1.028e-03   1.028e-03    -2.988    -2.988     0.000     (0)  
+   NaOH            1.288e-11   1.288e-11   -10.890   -10.890     0.000     (0)  
+O(0)          1.691e-36
+   O2              8.453e-37   8.657e-37   -36.073   -36.063     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Arsenolite      -24.04    -43.88  -19.84  As2O3
+  As              -37.58      5.11   42.68  As
+  As2O5           -21.01    -18.88    2.14  As2O5
+  As4O6(cubi)     -47.94    -87.76  -39.82  As4O6
+  As4O6(mono)     -47.71    -87.76  -40.05  As4O6
+  Cl2(g)          -33.27    -30.28    2.99  Cl2
+  Claudetite      -24.09    -43.88  -19.80  As2O3
+  Fix_H+           -5.00     -5.00    0.00  H+
+  H2(g)           -24.97    -28.07   -3.10  H2
+  H2O(g)           -1.59     -0.00    1.59  H2O
+  Halite           -3.80     -2.23    1.56  NaCl
+  HCl(g)          -12.43     -6.12    6.30  HCl
+  Ice              -0.14     -0.00    0.14  H2O
+  Na              -54.47     12.91   67.37  Na
+  Na(g)           -67.95     12.91   80.86  Na
+  Na2O            -59.64      7.78   67.42  Na2O
+  O2(g)           -33.17    -36.06   -2.89  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+-------------------------------------
+Reading input data for simulation 12.
+-------------------------------------
+
+	USE SURFACE 1
+	USE SOLUTION 1
+	EQUILIBRIUM_PHASES 1
+		Fix_H+ -5.5 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+	END
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	
+Using surface 1.	
+Using pure phase assemblage 1.	
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Fix_H+           -5.50    -5.50      0.00
+	 NaOH               is reactant       1.100e+01   1.100e+01  -1.183e-03
+
+------------------------------Surface composition------------------------------
+
+Diffuse Double Layer Surface-Complexation Model
+
+Surf          
+	 -1.361e-05  Surface charge, eq
+	 -4.863e-02  sigma, C/m²
+	 -5.580e-02  psi, V
+	  2.172e+00  -F*psi/RT
+	  8.777e+00  exp(-F*psi/RT)
+	  5.400e+01  specific area, m²/g
+	  2.700e+01  m² for   5.000e-01 g
+
+
+Surf_         
+	  8.966e-05  moles
+	                                   Mole                     Log
+	Species               Moles    Fraction    Molality    Molality
+
+	Surf_HAsO4-       4.201e-05       0.468   4.200e-05      -4.377
+	Surf_OH2+         2.918e-05       0.325   2.918e-05      -4.535
+	Surf_H2AsO4       1.806e-05       0.201   1.806e-05      -4.743
+	Surf_AsO4-2       3.890e-07       0.004   3.890e-07      -6.410
+	Surf_OH           3.562e-08       0.000   3.562e-08      -7.448
+	Surf_O-           3.966e-13       0.000   3.966e-13     -12.402
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As                3.955e-05   3.955e-05
+	Cl                1.000e-01   1.000e-01
+	Na                1.012e-01   1.012e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   5.500      Charge balance
+                                       pe  =   6.649      Adjusted to redox equilibrium
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.959e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =  -1.854e-06
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.145e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.58
+                               Iterations  =  21
+                                  Total H  = 1.110532e+02
+                                  Total O  = 5.552673e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   H+              3.796e-06   3.162e-06    -5.421    -5.500    -0.079      0.00
+   OH-             3.951e-09   3.036e-09    -8.403    -8.518    -0.114     (0)  
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     (0)  
+As(-3)        0.000e+00
+   AsH3            0.000e+00   0.000e+00   -90.323   -90.323     0.000     (0)  
+As(3)         6.145e-13
+   HAsO2           3.283e-13   3.283e-13   -12.484   -12.484     0.000     (0)  
+   As(OH)3         2.861e-13   2.861e-13   -12.544   -12.544     0.000     (0)  
+   H2AsO3-         7.127e-17   5.533e-17   -16.147   -16.257    -0.110     (0)  
+   AsO2-           6.836e-17   5.307e-17   -16.165   -16.275    -0.110     (0)  
+   AsO2OH-2        4.841e-22   1.709e-22   -21.315   -21.767    -0.452     (0)  
+As(5)         3.955e-05
+   H2AsO4-         3.752e-05   3.752e-05    -4.426    -4.426    -0.000     (0)  
+   HAsO4-2         2.011e-06   2.011e-06    -5.697    -5.697    -0.000     (0)  
+   H3AsO4          1.966e-08   2.011e-08    -7.706    -7.697     0.010     (0)  
+   AsO4-3          1.682e-11   1.598e-12   -10.774   -11.797    -1.022     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.897e-02   7.525e-02    -1.004    -1.123    -0.119     (0)  
+   NaCl            1.028e-03   1.028e-03    -2.988    -2.988     0.000     (0)  
+   HCl             5.345e-08   5.345e-08    -7.272    -7.272     0.000     (0)  
+Cl(1)         1.376e-33
+   HClO            1.361e-33   1.361e-33   -32.866   -32.866     0.000     (0)  
+   ClO-            1.495e-35   1.161e-35   -34.825   -34.935    -0.110     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -61.532   -61.642    -0.110     (0)  
+   HClO2           0.000e+00   0.000e+00   -63.972   -63.972     0.000     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -74.382   -74.496    -0.114     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00   -91.538   -91.652    -0.114     (0)  
+H(0)          7.799e-28
+   H2              3.900e-28   3.994e-28   -27.409   -27.399     0.010     (0)  
+Na            1.012e-01
+   Na+             1.002e-01   7.775e-02    -0.999    -1.109    -0.110     (0)  
+   NaCl            1.028e-03   1.028e-03    -2.988    -2.988     0.000     (0)  
+   NaOH            4.073e-11   4.073e-11   -10.390   -10.390     0.000     (0)  
+O(0)          7.743e-38
+   O2              3.871e-38   3.965e-38   -37.412   -37.402     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Arsenolite      -23.67    -43.51  -19.84  As2O3
+  As              -36.39      6.30   42.68  As
+  As2O5           -21.98    -19.85    2.14  As2O5
+  As4O6(cubi)     -47.20    -87.02  -39.82  As4O6
+  As4O6(mono)     -46.97    -87.02  -40.05  As4O6
+  Cl2(g)          -34.94    -31.95    2.99  Cl2
+  Claudetite      -23.71    -43.51  -19.80  As2O3
+  Fix_H+           -5.50     -5.50    0.00  H+
+  H2(g)           -24.30    -27.40   -3.10  H2
+  H2O(g)           -1.59     -0.00    1.59  H2O
+  Halite           -3.80     -2.23    1.56  NaCl
+  HCl(g)          -12.93     -6.62    6.30  HCl
+  Ice              -0.14     -0.00    0.14  H2O
+  Na              -53.63     13.74   67.37  Na
+  Na(g)           -67.12     13.74   80.86  Na
+  Na2O            -58.64      8.78   67.42  Na2O
+  O2(g)           -34.51    -37.40   -2.89  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+-------------------------------------
+Reading input data for simulation 13.
+-------------------------------------
+
+	USE SURFACE 1
+	USE SOLUTION 1
+	EQUILIBRIUM_PHASES 1
+		Fix_H+ -6.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+	END
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	
+Using surface 1.	
+Using pure phase assemblage 1.	
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Fix_H+           -6.00    -6.00      0.00
+	 NaOH               is reactant       1.100e+01   1.100e+01  -1.196e-03
+
+------------------------------Surface composition------------------------------
+
+Diffuse Double Layer Surface-Complexation Model
+
+Surf          
+	 -1.843e-05  Surface charge, eq
+	 -6.585e-02  sigma, C/m²
+	 -6.882e-02  psi, V
+	  2.679e+00  -F*psi/RT
+	  1.457e+01  exp(-F*psi/RT)
+	  5.400e+01  specific area, m²/g
+	  2.700e+01  m² for   5.000e-01 g
+
+
+Surf_         
+	  8.966e-05  moles
+	                                   Mole                     Log
+	Species               Moles    Fraction    Molality    Molality
+
+	Surf_HAsO4-       4.741e-05       0.529   4.741e-05      -4.324
+	Surf_OH2+         3.065e-05       0.342   3.065e-05      -4.514
+	Surf_H2AsO4       1.070e-05       0.119   1.070e-05      -4.971
+	Surf_AsO4-2       8.365e-07       0.009   8.365e-07      -6.078
+	Surf_OH           7.131e-08       0.001   7.130e-08      -7.147
+	Surf_O-           1.513e-12       0.000   1.513e-12     -11.820
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As                4.106e-05   4.106e-05
+	Cl                1.000e-01   1.000e-01
+	Na                1.012e-01   1.012e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   6.000      Charge balance
+                                       pe  =   5.831      Adjusted to redox equilibrium
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.960e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   4.741e-06
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.150e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.58
+                               Iterations  =  21
+                                  Total H  = 1.110532e+02
+                                  Total O  = 5.552674e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   H+              1.201e-06   1.000e-06    -5.921    -6.000    -0.079      0.00
+   OH-             1.249e-08   9.602e-09    -7.903    -8.018    -0.114     (0)  
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     (0)  
+As(-3)        0.000e+00
+   AsH3            0.000e+00   0.000e+00   -88.308   -88.308     0.000     (0)  
+As(3)         7.865e-13
+   HAsO2           4.200e-13   4.200e-13   -12.377   -12.377     0.000     (0)  
+   As(OH)3         3.660e-13   3.660e-13   -12.437   -12.437     0.000     (0)  
+   H2AsO3-         2.883e-16   2.238e-16   -15.540   -15.650    -0.110     (0)  
+   AsO2-           2.766e-16   2.147e-16   -15.558   -15.668    -0.110     (0)  
+   AsO2OH-2        6.193e-21   2.187e-21   -20.208   -20.660    -0.452     (0)  
+As(5)         4.106e-05
+   H2AsO4-         3.510e-05   3.510e-05    -4.455    -4.455    -0.000     (0)  
+   HAsO4-2         5.951e-06   5.951e-06    -5.225    -5.225    -0.000     (0)  
+   H3AsO4          5.816e-09   5.951e-09    -8.235    -8.225     0.010     (0)  
+   AsO4-3          1.574e-10   1.495e-11    -9.803   -10.825    -1.022     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.897e-02   7.525e-02    -1.004    -1.123    -0.119     (0)  
+   NaCl            1.028e-03   1.028e-03    -2.988    -2.988     0.000     (0)  
+   HCl             1.690e-08   1.690e-08    -7.772    -7.772     0.000     (0)  
+Cl(1)         1.030e-34
+   HClO            9.955e-35   9.955e-35   -34.002   -34.002     0.000     (0)  
+   ClO-            3.458e-36   2.684e-36   -35.461   -35.571    -0.110     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -62.803   -62.913    -0.110     (0)  
+   HClO2           0.000e+00   0.000e+00   -65.744   -65.744     0.000     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -76.289   -76.403    -0.114     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00   -94.081   -94.195    -0.114     (0)  
+H(0)          3.372e-27
+   H2              1.686e-27   1.727e-27   -26.773   -26.763     0.010     (0)  
+Na            1.012e-01
+   Na+             1.002e-01   7.776e-02    -0.999    -1.109    -0.110     (0)  
+   NaCl            1.028e-03   1.028e-03    -2.988    -2.988     0.000     (0)  
+   NaOH            1.288e-10   1.288e-10    -9.890    -9.890     0.000     (0)  
+O(0)          4.142e-39
+   O2              2.071e-39   2.121e-39   -38.684   -38.673     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Arsenolite      -23.45    -43.30  -19.84  As2O3
+  As              -35.33      7.36   42.68  As
+  As2O5           -23.04    -20.90    2.14  As2O5
+  As4O6(cubi)     -46.77    -86.59  -39.82  As4O6
+  As4O6(mono)     -46.54    -86.59  -40.05  As4O6
+  Cl2(g)          -36.58    -33.58    2.99  Cl2
+  Claudetite      -23.50    -43.30  -19.80  As2O3
+  Fix_H+           -6.00     -6.00    0.00  H+
+  H2(g)           -23.66    -26.76   -3.10  H2
+  H2O(g)           -1.59     -0.00    1.59  H2O
+  Halite           -3.80     -2.23    1.56  NaCl
+  HCl(g)          -13.43     -7.12    6.30  HCl
+  Ice              -0.14     -0.00    0.14  H2O
+  Na              -52.81     14.56   67.37  Na
+  Na(g)           -66.30     14.56   80.86  Na
+  Na2O            -57.64      9.78   67.42  Na2O
+  O2(g)           -35.78    -38.67   -2.89  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+-------------------------------------
+Reading input data for simulation 14.
+-------------------------------------
+
+	USE SURFACE 1
+	USE SOLUTION 1
+	EQUILIBRIUM_PHASES 1
+		Fix_H+ -6.5 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+	END
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	
+Using surface 1.	
+Using pure phase assemblage 1.	
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Fix_H+           -6.50    -6.50      0.00
+	 NaOH               is reactant       1.100e+01   1.100e+01  -1.211e-03
+
+------------------------------Surface composition------------------------------
+
+Diffuse Double Layer Surface-Complexation Model
+
+Surf          
+	 -2.334e-05  Surface charge, eq
+	 -8.340e-02  sigma, C/m²
+	 -7.966e-02  psi, V
+	  3.101e+00  -F*psi/RT
+	  2.221e+01  exp(-F*psi/RT)
+	  5.400e+01  specific area, m²/g
+	  2.700e+01  m² for   5.000e-01 g
+
+
+Surf_         
+	  8.966e-05  moles
+	                                   Mole                     Log
+	Species               Moles    Fraction    Molality    Molality
+
+	Surf_HAsO4-       5.087e-05       0.567   5.086e-05      -4.294
+	Surf_OH2+         3.125e-05       0.349   3.125e-05      -4.505
+	Surf_H2AsO4       5.534e-06       0.062   5.534e-06      -5.257
+	Surf_AsO4-2       1.861e-06       0.021   1.861e-06      -5.730
+	Surf_OH           1.507e-07       0.002   1.507e-07      -6.822
+	Surf_O-           6.631e-12       0.000   6.631e-12     -11.178
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As                4.174e-05   4.174e-05
+	Cl                1.000e-01   1.000e-01
+	Na                1.012e-01   1.012e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   6.500      Charge balance
+                                       pe  =   5.138      Adjusted to redox equilibrium
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.962e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   1.422e-05
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.155e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.58
+                               Iterations  =  22
+                                  Total H  = 1.110533e+02
+                                  Total O  = 5.552676e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   H+              3.796e-07   3.162e-07    -6.421    -6.500    -0.079      0.00
+   OH-             3.951e-08   3.036e-08    -7.403    -7.518    -0.114     (0)  
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     (0)  
+As(-3)        0.000e+00
+   AsH3            0.000e+00   0.000e+00   -87.376   -87.376     0.000     (0)  
+As(3)         4.688e-13
+   HAsO2           2.500e-13   2.500e-13   -12.602   -12.602     0.000     (0)  
+   As(OH)3         2.178e-13   2.178e-13   -12.662   -12.662     0.000     (0)  
+   H2AsO3-         5.426e-16   4.212e-16   -15.266   -15.375    -0.110     (0)  
+   AsO2-           5.205e-16   4.041e-16   -15.284   -15.394    -0.110     (0)  
+   AsO2OH-2        3.686e-20   1.301e-20   -19.433   -19.886    -0.452     (0)  
+As(5)         4.174e-05
+   H2AsO4-         2.717e-05   2.717e-05    -4.566    -4.566    -0.000     (0)  
+   HAsO4-2         1.457e-05   1.457e-05    -4.837    -4.837    -0.000     (0)  
+   H3AsO4          1.424e-09   1.457e-09    -8.847    -8.837     0.010     (0)  
+   AsO4-3          1.218e-09   1.157e-10    -8.914    -9.937    -1.022     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.897e-02   7.525e-02    -1.004    -1.124    -0.119     (0)  
+   NaCl            1.029e-03   1.029e-03    -2.988    -2.988     0.000     (0)  
+   HCl             5.345e-09   5.345e-09    -8.272    -8.272     0.000     (0)  
+Cl(1)         1.437e-35
+   HClO            1.295e-35   1.295e-35   -34.888   -34.888     0.000     (0)  
+   ClO-            1.422e-36   1.104e-36   -35.847   -35.957    -0.110     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -63.575   -63.685    -0.110     (0)  
+   HClO2           0.000e+00   0.000e+00   -67.015   -67.015     0.000     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -77.447   -77.561    -0.114     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00   -95.624   -95.739    -0.114     (0)  
+H(0)          8.199e-27
+   H2              4.100e-27   4.199e-27   -26.387   -26.377     0.010     (0)  
+Na            1.012e-01
+   Na+             1.002e-01   7.777e-02    -0.999    -1.109    -0.110     (0)  
+   NaCl            1.029e-03   1.029e-03    -2.988    -2.988     0.000     (0)  
+   NaOH            4.074e-10   4.074e-10    -9.390    -9.390     0.000     (0)  
+O(0)          7.006e-40
+   O2              3.503e-40   3.588e-40   -39.456   -39.445     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Arsenolite      -23.90    -43.75  -19.84  As2O3
+  As              -34.97      7.71   42.68  As
+  As2O5           -24.26    -22.13    2.14  As2O5
+  As4O6(cubi)     -47.67    -87.49  -39.82  As4O6
+  As4O6(mono)     -47.44    -87.49  -40.05  As4O6
+  Cl2(g)          -37.96    -34.97    2.99  Cl2
+  Claudetite      -23.95    -43.75  -19.80  As2O3
+  Fix_H+           -6.50     -6.50    0.00  H+
+  H2(g)           -23.28    -26.38   -3.10  H2
+  H2O(g)           -1.59     -0.00    1.59  H2O
+  Halite           -3.80     -2.23    1.56  NaCl
+  HCl(g)          -13.93     -7.62    6.30  HCl
+  Ice              -0.14     -0.00    0.14  H2O
+  Na              -52.12     15.25   67.37  Na
+  Na(g)           -65.61     15.25   80.86  Na
+  Na2O            -56.64     10.78   67.42  Na2O
+  O2(g)           -36.55    -39.45   -2.89  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+-------------------------------------
+Reading input data for simulation 15.
+-------------------------------------
+
+	USE SURFACE 1
+	USE SOLUTION 1
+	EQUILIBRIUM_PHASES 1
+		Fix_H+ -7.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+	END
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	
+Using surface 1.	
+Using pure phase assemblage 1.	
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Fix_H+           -7.00    -7.00      0.00
+	 NaOH               is reactant       1.100e+01   1.100e+01  -1.228e-03
+
+------------------------------Surface composition------------------------------
+
+Diffuse Double Layer Surface-Complexation Model
+
+Surf          
+	 -2.763e-05  Surface charge, eq
+	 -9.874e-02  sigma, C/m²
+	 -8.769e-02  psi, V
+	  3.413e+00  -F*psi/RT
+	  3.036e+01  exp(-F*psi/RT)
+	  5.400e+01  specific area, m²/g
+	  2.700e+01  m² for   5.000e-01 g
+
+
+Surf_         
+	  8.966e-05  moles
+	                                   Mole                     Log
+	Species               Moles    Fraction    Molality    Molality
+
+	Surf_HAsO4-       5.082e-05       0.567   5.082e-05      -4.294
+	Surf_OH2+         3.180e-05       0.355   3.180e-05      -4.498
+	Surf_AsO4-2       4.302e-06       0.048   4.302e-06      -5.366
+	Surf_H2AsO4       2.390e-06       0.027   2.390e-06      -5.622
+	Surf_OH           3.549e-07       0.004   3.549e-07      -6.450
+	Surf_O-           3.612e-11       0.000   3.612e-11     -10.442
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As                4.249e-05   4.249e-05
+	Cl                1.000e-01   1.000e-01
+	Na                1.012e-01   1.012e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   7.000      Charge balance
+                                       pe  =   4.206      Adjusted to redox equilibrium
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.964e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   2.674e-05
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.159e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.58
+                               Iterations  =  22
+                                  Total H  = 1.110533e+02
+                                  Total O  = 5.552678e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   OH-             1.249e-07   9.602e-08    -6.903    -7.018    -0.114     (0)  
+   H+              1.201e-07   1.000e-07    -6.921    -7.000    -0.079      0.00
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     (0)  
+As(-3)        0.000e+00
+   AsH3            0.000e+00   0.000e+00   -84.652   -84.652     0.000     (0)  
+As(3)         6.333e-13
+   HAsO2           3.360e-13   3.360e-13   -12.474   -12.474     0.000     (0)  
+   As(OH)3         2.928e-13   2.928e-13   -12.533   -12.533     0.000     (0)  
+   H2AsO3-         2.307e-15   1.791e-15   -14.637   -14.747    -0.110     (0)  
+   AsO2-           2.213e-15   1.718e-15   -14.655   -14.765    -0.110     (0)  
+   AsO2OH-2        4.956e-19   1.749e-19   -18.305   -18.757    -0.452     (0)  
+As(5)         4.249e-05
+   HAsO4-2         2.672e-05   2.672e-05    -4.573    -4.573    -0.000     (0)  
+   H2AsO4-         1.576e-05   1.576e-05    -4.802    -4.802    -0.000     (0)  
+   AsO4-3          7.069e-09   6.711e-10    -8.151    -9.173    -1.023     (0)  
+   H3AsO4          2.611e-10   2.672e-10    -9.583    -9.573     0.010     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.897e-02   7.525e-02    -1.005    -1.124    -0.119     (0)  
+   NaCl            1.029e-03   1.029e-03    -2.988    -2.988     0.000     (0)  
+   HCl             1.690e-09   1.690e-09    -8.772    -8.772     0.000     (0)  
+Cl(1)         7.527e-37
+   HClO            5.587e-37   5.587e-37   -36.253   -36.253     0.000     (0)  
+   ClO-            1.941e-37   1.506e-37   -36.712   -36.822    -0.110     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -65.305   -65.415    -0.110     (0)  
+   HClO2           0.000e+00   0.000e+00   -69.245   -69.245     0.000     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -80.042   -80.156    -0.114     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00   -99.084   -99.199    -0.114     (0)  
+H(0)          6.008e-26
+   H2              3.004e-26   3.077e-26   -25.522   -25.512     0.010     (0)  
+Na            1.012e-01
+   Na+             1.002e-01   7.778e-02    -0.999    -1.109    -0.110     (0)  
+   NaCl            1.029e-03   1.029e-03    -2.988    -2.988     0.000     (0)  
+   NaOH            1.288e-09   1.288e-09    -8.890    -8.890     0.000     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -41.186   -41.175     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Arsenolite      -23.65    -43.49  -19.84  As2O3
+  As              -33.55      9.14   42.68  As
+  As2O5           -25.74    -23.60    2.14  As2O5
+  As4O6(cubi)     -47.16    -86.98  -39.82  As4O6
+  As4O6(mono)     -46.93    -86.98  -40.05  As4O6
+  Cl2(g)          -39.83    -36.83    2.99  Cl2
+  Claudetite      -23.69    -43.49  -19.80  As2O3
+  Fix_H+           -7.00     -7.00    0.00  H+
+  H2(g)           -22.41    -25.51   -3.10  H2
+  H2O(g)           -1.59     -0.00    1.59  H2O
+  Halite           -3.80     -2.23    1.56  NaCl
+  HCl(g)          -14.43     -8.12    6.30  HCl
+  Ice              -0.14     -0.00    0.14  H2O
+  Na              -51.19     16.18   67.37  Na
+  Na(g)           -64.68     16.18   80.86  Na
+  Na2O            -55.64     11.78   67.42  Na2O
+  O2(g)           -38.28    -41.18   -2.89  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+-------------------------------------
+Reading input data for simulation 16.
+-------------------------------------
+
+	USE SURFACE 1
+	USE SOLUTION 1
+	EQUILIBRIUM_PHASES 1
+		Fix_H+ -7.5 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+	END
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	
+Using surface 1.	
+Using pure phase assemblage 1.	
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Fix_H+           -7.50    -7.50      0.00
+	 NaOH               is reactant       1.100e+01   1.100e+01  -1.245e-03
+
+------------------------------Surface composition------------------------------
+
+Diffuse Double Layer Surface-Complexation Model
+
+Surf          
+	 -3.141e-05  Surface charge, eq
+	 -1.123e-01  sigma, C/m²
+	 -9.390e-02  psi, V
+	  3.655e+00  -F*psi/RT
+	  3.867e+01  exp(-F*psi/RT)
+	  5.400e+01  specific area, m²/g
+	  2.700e+01  m² for   5.000e-01 g
+
+
+Surf_         
+	  8.966e-05  moles
+	                                   Mole                     Log
+	Species               Moles    Fraction    Molality    Molality
+
+	Surf_HAsO4-       4.535e-05       0.506   4.535e-05      -4.343
+	Surf_OH2+         3.300e-05       0.368   3.300e-05      -4.481
+	Surf_AsO4-2       9.532e-06       0.106   9.532e-06      -5.021
+	Surf_OH           9.145e-07       0.010   9.144e-07      -6.039
+	Surf_H2AsO4       8.590e-07       0.010   8.590e-07      -6.066
+	Surf_O-           2.311e-10       0.000   2.311e-10      -9.636
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As                4.425e-05   4.426e-05
+	Cl                1.000e-01   1.000e-01
+	Na                1.012e-01   1.012e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   7.500      Charge balance
+                                       pe  =   3.370      Adjusted to redox equilibrium
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.967e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   3.769e-05
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.163e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.58
+                               Iterations  =  23
+                                  Total H  = 1.110533e+02
+                                  Total O  = 5.552680e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   OH-             3.951e-07   3.036e-07    -6.403    -6.518    -0.114     (0)  
+   H+              3.797e-08   3.162e-08    -7.421    -7.500    -0.079      0.00
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     (0)  
+As(-3)        0.000e+00
+   AsH3            0.000e+00   0.000e+00   -82.821   -82.821     0.000     (0)  
+As(3)         4.214e-13
+   HAsO2           2.202e-13   2.202e-13   -12.657   -12.657     0.000     (0)  
+   As(OH)3         1.918e-13   1.918e-13   -12.717   -12.717     0.000     (0)  
+   H2AsO3-         4.779e-15   3.710e-15   -14.321   -14.431    -0.110     (0)  
+   AsO2-           4.585e-15   3.559e-15   -14.339   -14.449    -0.110     (0)  
+   AsO2OH-2        3.247e-18   1.146e-18   -17.488   -17.941    -0.452     (0)  
+As(5)         4.425e-05
+   HAsO4-2         3.727e-05   3.727e-05    -4.429    -4.429    -0.000     (0)  
+   H2AsO4-         6.952e-06   6.952e-06    -5.158    -5.158    -0.000     (0)  
+   AsO4-3          3.119e-08   2.961e-09    -7.506    -8.529    -1.023     (0)  
+   H3AsO4          3.643e-11   3.727e-11   -10.439   -10.429     0.010     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.897e-02   7.524e-02    -1.005    -1.124    -0.119     (0)  
+   NaCl            1.029e-03   1.029e-03    -2.988    -2.988     0.000     (0)  
+   HCl             5.344e-10   5.344e-10    -9.272    -9.272     0.000     (0)  
+Cl(1)         7.892e-38
+   ClO-            4.131e-38   3.207e-38   -37.384   -37.494    -0.110     (0)  
+   HClO            3.761e-38   3.761e-38   -37.425   -37.425     0.000     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -66.649   -66.759    -0.110     (0)  
+   HClO2           0.000e+00   0.000e+00   -71.089   -71.089     0.000     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -82.057   -82.172    -0.114     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00  -101.772  -101.886    -0.114     (0)  
+H(0)          2.822e-25
+   H2              1.411e-25   1.445e-25   -24.850   -24.840     0.010     (0)  
+Na            1.012e-01
+   Na+             1.002e-01   7.779e-02    -0.999    -1.109    -0.110     (0)  
+   NaCl            1.029e-03   1.029e-03    -2.988    -2.988     0.000     (0)  
+   NaOH            4.075e-09   4.075e-09    -8.390    -8.390     0.000     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -42.529   -42.519     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Arsenolite      -24.01    -43.86  -19.84  As2O3
+  As              -32.72      9.96   42.68  As
+  As2O5           -27.45    -25.31    2.14  As2O5
+  As4O6(cubi)     -47.89    -87.71  -39.82  As4O6
+  As4O6(mono)     -47.66    -87.71  -40.05  As4O6
+  Cl2(g)          -41.50    -38.50    2.99  Cl2
+  Claudetite      -24.06    -43.86  -19.80  As2O3
+  Fix_H+           -7.50     -7.50    0.00  H+
+  H2(g)           -21.74    -24.84   -3.10  H2
+  H2O(g)           -1.59     -0.00    1.59  H2O
+  Halite           -3.80     -2.23    1.56  NaCl
+  HCl(g)          -14.93     -8.62    6.30  HCl
+  Ice              -0.14     -0.00    0.14  H2O
+  Na              -50.35     17.02   67.37  Na
+  Na(g)           -63.84     17.02   80.86  Na
+  Na2O            -54.64     12.78   67.42  Na2O
+  O2(g)           -39.63    -42.52   -2.89  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+-------------------------------------
+Reading input data for simulation 17.
+-------------------------------------
+
+	USE SURFACE 1
+	USE SOLUTION 1
+	EQUILIBRIUM_PHASES 1
+		Fix_H+ -8.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+	END
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	
+Using surface 1.	
+Using pure phase assemblage 1.	
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Fix_H+           -8.00    -8.00      0.00
+	 NaOH               is reactant       1.100e+01   1.100e+01  -1.261e-03
+
+------------------------------Surface composition------------------------------
+
+Diffuse Double Layer Surface-Complexation Model
+
+Surf          
+	 -3.578e-05  Surface charge, eq
+	 -1.279e-01  sigma, C/m²
+	 -1.003e-01  psi, V
+	  3.904e+00  -F*psi/RT
+	  4.958e+01  exp(-F*psi/RT)
+	  5.400e+01  specific area, m²/g
+	  2.700e+01  m² for   5.000e-01 g
+
+
+Surf_         
+	  8.966e-05  moles
+	                                   Mole                     Log
+	Species               Moles    Fraction    Molality    Molality
+
+	Surf_OH2+         3.458e-05       0.386   3.458e-05      -4.461
+	Surf_HAsO4-       3.454e-05       0.385   3.454e-05      -4.462
+	Surf_AsO4-2       1.791e-05       0.200   1.791e-05      -4.747
+	Surf_OH           2.363e-06       0.026   2.363e-06      -5.627
+	Surf_H2AsO4       2.653e-07       0.003   2.653e-07      -6.576
+	Surf_O-           1.473e-09       0.000   1.473e-09      -8.832
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As                4.728e-05   4.728e-05
+	Cl                1.000e-01   1.000e-01
+	Na                1.013e-01   1.013e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   8.000      Charge balance
+                                       pe  =   2.268      Adjusted to redox equilibrium
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.969e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   4.602e-05
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.167e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.59
+                               Iterations  =  23
+                                  Total H  = 1.110533e+02
+                                  Total O  = 5.552683e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   OH-             1.249e-06   9.602e-07    -5.903    -6.018    -0.114     (0)  
+   H+              1.201e-08   1.000e-08    -7.921    -8.000    -0.079      0.00
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     (0)  
+As(-3)        0.000e+00
+   AsH3            0.000e+00   0.000e+00   -78.931   -78.931     0.000     (0)  
+As(3)         8.422e-13
+   HAsO2           4.198e-13   4.198e-13   -12.377   -12.377     0.000     (0)  
+   As(OH)3         3.658e-13   3.658e-13   -12.437   -12.437     0.000     (0)  
+   H2AsO3-         2.882e-14   2.237e-14   -13.540   -13.650    -0.110     (0)  
+   AsO2-           2.765e-14   2.146e-14   -13.558   -13.668    -0.110     (0)  
+   AsO2OH-2        6.193e-17   2.186e-17   -16.208   -16.660    -0.452     (0)  
+As(5)         4.728e-05
+   HAsO4-2         4.454e-05   4.454e-05    -4.351    -4.351    -0.000     (0)  
+   H2AsO4-         2.627e-06   2.627e-06    -5.581    -5.581    -0.000     (0)  
+   AsO4-3          1.179e-07   1.119e-08    -6.929    -7.951    -1.023     (0)  
+   H3AsO4          4.353e-12   4.454e-12   -11.361   -11.351     0.010     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.897e-02   7.524e-02    -1.005    -1.124    -0.119     (0)  
+   NaCl            1.029e-03   1.029e-03    -2.988    -2.988     0.000     (0)  
+   HCl             1.690e-10   1.690e-10    -9.772    -9.772     0.000     (0)  
+Cl(1)         3.334e-39
+   ClO-            2.589e-39   2.009e-39   -38.587   -38.697    -0.110     (0)  
+   HClO            7.452e-40   7.452e-40   -39.128   -39.128     0.000     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -69.055   -69.165    -0.110     (0)  
+   HClO2           0.000e+00   0.000e+00   -73.995   -73.995     0.000     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -85.666   -85.781    -0.114     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00  -106.584  -106.698    -0.114     (0)  
+H(0)          4.504e-24
+   H2              2.252e-24   2.307e-24   -23.647   -23.637     0.010     (0)  
+Na            1.013e-01
+   Na+             1.002e-01   7.780e-02    -0.999    -1.109    -0.110     (0)  
+   NaCl            1.029e-03   1.029e-03    -2.988    -2.988     0.000     (0)  
+   NaOH            1.289e-08   1.289e-08    -7.890    -7.890     0.000     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -44.935   -44.925     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Arsenolite      -23.45    -43.30  -19.84  As2O3
+  As              -30.64     12.05   42.68  As
+  As2O5           -29.29    -27.16    2.14  As2O5
+  As4O6(cubi)     -46.77    -86.59  -39.82  As4O6
+  As4O6(mono)     -46.54    -86.59  -40.05  As4O6
+  Cl2(g)          -43.70    -40.71    2.99  Cl2
+  Claudetite      -23.50    -43.30  -19.80  As2O3
+  Fix_H+           -8.00     -8.00    0.00  H+
+  H2(g)           -20.54    -23.64   -3.10  H2
+  H2O(g)           -1.59     -0.00    1.59  H2O
+  Halite           -3.80     -2.23    1.56  NaCl
+  HCl(g)          -15.43     -9.12    6.30  HCl
+  Ice              -0.14     -0.00    0.14  H2O
+  Na              -49.25     18.12   67.37  Na
+  Na(g)           -62.74     18.12   80.86  Na
+  Na2O            -53.64     13.78   67.42  Na2O
+  O2(g)           -42.03    -44.92   -2.89  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+-------------------------------------
+Reading input data for simulation 18.
+-------------------------------------
+
+	USE SURFACE 1
+	USE SOLUTION 1
+	EQUILIBRIUM_PHASES 1
+		Fix_H+ -8.5 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+	END
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	
+Using surface 1.	
+Using pure phase assemblage 1.	
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Fix_H+           -8.50    -8.50      0.00
+	 NaOH               is reactant       1.100e+01   1.100e+01  -1.278e-03
+
+------------------------------Surface composition------------------------------
+
+Diffuse Double Layer Surface-Complexation Model
+
+Surf          
+	 -4.143e-05  Surface charge, eq
+	 -1.481e-01  sigma, C/m²
+	 -1.076e-01  psi, V
+	  4.186e+00  -F*psi/RT
+	  6.578e+01  exp(-F*psi/RT)
+	  5.400e+01  specific area, m²/g
+	  2.700e+01  m² for   5.000e-01 g
+
+
+Surf_         
+	  8.966e-05  moles
+	                                   Mole                     Log
+	Species               Moles    Fraction    Molality    Molality
+
+	Surf_OH2+         3.482e-05       0.388   3.481e-05      -4.458
+	Surf_AsO4-2       2.714e-05       0.303   2.714e-05      -4.566
+	Surf_HAsO4-       2.196e-05       0.245   2.196e-05      -4.658
+	Surf_OH           5.671e-06       0.063   5.671e-06      -5.246
+	Surf_H2AsO4       7.075e-08       0.001   7.075e-08      -7.150
+	Surf_O-           8.426e-09       0.000   8.426e-09      -8.074
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As                5.083e-05   5.083e-05
+	Cl                1.000e-01   1.000e-01
+	Na                1.013e-01   1.013e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   8.500      Charge balance
+                                       pe  =   1.363      Adjusted to redox equilibrium
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.971e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   5.431e-05
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.173e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.59
+                               Iterations  =  24
+                                  Total H  = 1.110534e+02
+                                  Total O  = 5.552686e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   OH-             3.951e-06   3.036e-06    -5.403    -5.518    -0.114     (0)  
+   H+              3.797e-09   3.162e-09    -8.421    -8.500    -0.079      0.00
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     (0)  
+As(-3)        0.000e+00
+   AsH3            0.000e+00   0.000e+00   -76.646   -76.646     0.000     (0)  
+As(3)         6.920e-13
+   HAsO2           3.011e-13   3.011e-13   -12.521   -12.521     0.000     (0)  
+   As(OH)3         2.624e-13   2.624e-13   -12.581   -12.581     0.000     (0)  
+   H2AsO3-         6.537e-14   5.074e-14   -13.185   -13.295    -0.110     (0)  
+   AsO2-           6.271e-14   4.867e-14   -13.203   -13.313    -0.110     (0)  
+   AsO2OH-2        4.442e-16   1.568e-16   -15.352   -15.805    -0.452     (0)  
+As(5)         5.083e-05
+   HAsO4-2         4.949e-05   4.949e-05    -4.305    -4.305    -0.000     (0)  
+   H2AsO4-         9.232e-07   9.232e-07    -6.035    -6.035    -0.000     (0)  
+   AsO4-3          4.143e-07   3.931e-08    -6.383    -7.405    -1.023     (0)  
+   H3AsO4          4.837e-13   4.949e-13   -12.315   -12.305     0.010     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.897e-02   7.524e-02    -1.005    -1.124    -0.119     (0)  
+   NaCl            1.029e-03   1.029e-03    -2.988    -2.988     0.000     (0)  
+   HCl             5.344e-11   5.344e-11   -10.272   -10.272     0.000     (0)  
+Cl(1)         4.011e-40
+   ClO-            4.011e-40   3.114e-40   -39.397   -39.507    -0.110     (0)  
+   HClO            0.000e+00   0.000e+00   -40.438   -40.438     0.000     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -70.675   -70.785    -0.110     (0)  
+   HClO2           0.000e+00   0.000e+00   -76.115   -76.115     0.000     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -88.096   -88.210    -0.114     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00  -109.823  -109.937    -0.114     (0)  
+H(0)          2.907e-23
+   H2              1.453e-23   1.489e-23   -22.838   -22.827     0.010     (0)  
+Na            1.013e-01
+   Na+             1.002e-01   7.781e-02    -0.999    -1.109    -0.110     (0)  
+   NaCl            1.029e-03   1.029e-03    -2.988    -2.988     0.000     (0)  
+   NaOH            4.076e-08   4.076e-08    -7.390    -7.390     0.000     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -46.555   -46.544     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Arsenolite      -23.74    -43.58  -19.84  As2O3
+  As              -29.57     13.12   42.68  As
+  As2O5           -31.20    -29.06    2.14  As2O5
+  As4O6(cubi)     -47.35    -87.17  -39.82  As4O6
+  As4O6(mono)     -47.12    -87.17  -40.05  As4O6
+  Cl2(g)          -45.51    -42.52    2.99  Cl2
+  Claudetite      -23.79    -43.58  -19.80  As2O3
+  Fix_H+           -8.50     -8.50    0.00  H+
+  H2(g)           -19.73    -22.83   -3.10  H2
+  H2O(g)           -1.59     -0.00    1.59  H2O
+  Halite           -3.80     -2.23    1.56  NaCl
+  HCl(g)          -15.93     -9.62    6.30  HCl
+  Ice              -0.14     -0.00    0.14  H2O
+  Na              -48.34     19.03   67.37  Na
+  Na(g)           -61.83     19.03   80.86  Na
+  Na2O            -52.64     14.78   67.42  Na2O
+  O2(g)           -43.65    -46.54   -2.89  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+-------------------------------------
+Reading input data for simulation 19.
+-------------------------------------
+
+	USE SURFACE 1
+	USE SOLUTION 1
+	EQUILIBRIUM_PHASES 1
+		Fix_H+ -9.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+	END
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	
+Using surface 1.	
+Using pure phase assemblage 1.	
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Fix_H+           -9.00    -9.00      0.00
+	 NaOH               is reactant       1.100e+01   1.100e+01  -1.302e-03
+
+------------------------------Surface composition------------------------------
+
+Diffuse Double Layer Surface-Complexation Model
+
+Surf          
+	 -4.823e-05  Surface charge, eq
+	 -1.724e-01  sigma, C/m²
+	 -1.152e-01  psi, V
+	  4.482e+00  -F*psi/RT
+	  8.844e+01  exp(-F*psi/RT)
+	  5.400e+01  specific area, m²/g
+	  2.700e+01  m² for   5.000e-01 g
+
+
+Surf_         
+	  8.966e-05  moles
+	                                   Mole                     Log
+	Species               Moles    Fraction    Molality    Molality
+
+	Surf_AsO4-2       3.407e-05       0.380   3.407e-05      -4.468
+	Surf_OH2+         3.168e-05       0.353   3.167e-05      -4.499
+	Surf_OH           1.214e-05       0.135   1.214e-05      -4.916
+	Surf_HAsO4-       1.172e-05       0.131   1.172e-05      -4.931
+	Surf_O-           4.241e-08       0.000   4.241e-08      -7.373
+	Surf_H2AsO4       1.606e-08       0.000   1.606e-08      -7.794
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As                5.419e-05   5.419e-05
+	Cl                1.000e-01   1.000e-01
+	Na                1.013e-01   1.013e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   9.000      Charge balance
+                                       pe  =   0.478      Adjusted to redox equilibrium
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.974e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   6.789e-05
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.180e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.59
+                               Iterations  =  25
+                                  Total H  = 1.110534e+02
+                                  Total O  = 5.552689e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   OH-             1.249e-05   9.602e-06    -4.903    -5.018    -0.114     (0)  
+   H+              1.201e-09   1.000e-09    -8.921    -9.000    -0.079      0.00
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     (0)  
+As(-3)        0.000e+00
+   AsH3            0.000e+00   0.000e+00   -74.534   -74.534     0.000     (0)  
+As(3)         6.100e-13
+   HAsO2           1.888e-13   1.888e-13   -12.724   -12.724     0.000     (0)  
+   As(OH)3         1.645e-13   1.645e-13   -12.784   -12.784     0.000     (0)  
+   H2AsO3-         1.296e-13   1.006e-13   -12.887   -12.997    -0.110     (0)  
+   AsO2-           1.243e-13   9.650e-14   -12.905   -13.015    -0.110     (0)  
+   AsO2OH-2        2.785e-15   9.828e-16   -14.555   -15.008    -0.452     (0)  
+As(5)         5.419e-05
+   HAsO4-2         5.249e-05   5.249e-05    -4.280    -4.280    -0.000     (0)  
+   AsO4-3          1.390e-06   1.318e-07    -5.857    -6.880    -1.023     (0)  
+   H2AsO4-         3.096e-07   3.096e-07    -6.509    -6.509    -0.000     (0)  
+   H3AsO4          5.130e-14   5.249e-14   -13.290   -13.280     0.010     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.897e-02   7.524e-02    -1.005    -1.124    -0.119     (0)  
+   NaCl            1.029e-03   1.029e-03    -2.988    -2.988     0.000     (0)  
+   HCl             1.690e-11   1.690e-11   -10.772   -10.772     0.000     (0)  
+Cl(1)         0.000e+00
+   ClO-            0.000e+00   0.000e+00   -40.168   -40.278    -0.110     (0)  
+   HClO            0.000e+00   0.000e+00   -41.709   -41.709     0.000     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -72.218   -72.328    -0.110     (0)  
+   HClO2           0.000e+00   0.000e+00   -78.158   -78.158     0.000     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -90.411   -90.525    -0.114     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00  -112.910  -113.024    -0.114     (0)  
+H(0)          1.718e-22
+   H2              8.591e-23   8.799e-23   -22.066   -22.056     0.010     (0)  
+Na            1.013e-01
+   Na+             1.003e-01   7.783e-02    -0.999    -1.109    -0.110     (0)  
+   NaCl            1.029e-03   1.029e-03    -2.988    -2.988     0.000     (0)  
+   NaOH            1.289e-07   1.289e-07    -6.890    -6.890     0.000     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -48.098   -48.088     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Arsenolite      -24.15    -43.99  -19.84  As2O3
+  As              -28.61     14.07   42.68  As
+  As2O5           -33.15    -31.01    2.14  As2O5
+  As4O6(cubi)     -48.16    -87.98  -39.82  As4O6
+  As4O6(mono)     -47.93    -87.98  -40.05  As4O6
+  Cl2(g)          -47.28    -44.29    2.99  Cl2
+  Claudetite      -24.20    -43.99  -19.80  As2O3
+  Fix_H+           -9.00     -9.00    0.00  H+
+  H2(g)           -18.95    -22.06   -3.10  H2
+  H2O(g)           -1.59     -0.00    1.59  H2O
+  Halite           -3.80     -2.23    1.56  NaCl
+  HCl(g)          -16.43    -10.12    6.30  HCl
+  Ice              -0.14     -0.00    0.14  H2O
+  Na              -47.46     19.91   67.37  Na
+  Na(g)           -60.95     19.91   80.86  Na
+  Na2O            -51.64     15.78   67.42  Na2O
+  O2(g)           -45.20    -48.09   -2.89  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+-------------------------------------
+Reading input data for simulation 20.
+-------------------------------------
+
+	USE SURFACE 1
+	USE SOLUTION 1
+	EQUILIBRIUM_PHASES 1
+		Fix_H+ -9.5 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+	END
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	
+Using surface 1.	
+Using pure phase assemblage 1.	
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Fix_H+           -9.50    -9.50      0.00
+	 NaOH               is reactant       1.100e+01   1.100e+01  -1.346e-03
+
+------------------------------Surface composition------------------------------
+
+Diffuse Double Layer Surface-Complexation Model
+
+Surf          
+	 -5.540e-05  Surface charge, eq
+	 -1.980e-01  sigma, C/m²
+	 -1.221e-01  psi, V
+	  4.754e+00  -F*psi/RT
+	  1.160e+02  exp(-F*psi/RT)
+	  5.400e+01  specific area, m²/g
+	  2.700e+01  m² for   5.000e-01 g
+
+
+Surf_         
+	  8.966e-05  moles
+	                                   Mole                     Log
+	Species               Moles    Fraction    Molality    Molality
+
+	Surf_AsO4-2       3.717e-05       0.415   3.717e-05      -4.430
+	Surf_OH2+         2.443e-05       0.272   2.443e-05      -4.612
+	Surf_OH           2.257e-05       0.252   2.257e-05      -4.647
+	Surf_HAsO4-       5.304e-06       0.059   5.304e-06      -5.275
+	Surf_O-           1.901e-07       0.002   1.901e-07      -6.721
+	Surf_H2AsO4       3.014e-09       0.000   3.014e-09      -8.521
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As                5.752e-05   5.752e-05
+	Cl                1.000e-01   1.000e-01
+	Na                1.013e-01   1.013e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   9.500      Charge balance
+                                       pe  =  -0.401      Adjusted to redox equilibrium
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.979e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   1.018e-04
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.187e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.60
+                               Iterations  =  26
+                                  Total H  = 1.110534e+02
+                                  Total O  = 5.552694e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   OH-             3.951e-05   3.036e-05    -4.403    -4.518    -0.114     (0)  
+   H+              3.797e-10   3.162e-10    -9.421    -9.500    -0.079      0.00
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     (0)  
+As(-3)        0.000e+00
+   AsH3            0.000e+00   0.000e+00   -72.505   -72.505     0.000     (0)  
+As(3)         6.817e-13
+   H2AsO3-         2.360e-13   1.831e-13   -12.627   -12.737    -0.110     (0)  
+   AsO2-           2.263e-13   1.757e-13   -12.645   -12.755    -0.110     (0)  
+   HAsO2           1.087e-13   1.087e-13   -12.964   -12.964     0.000     (0)  
+   As(OH)3         9.470e-14   9.470e-14   -13.024   -13.024     0.000     (0)  
+   AsO2OH-2        1.604e-14   5.658e-15   -13.795   -14.247    -0.452     (0)  
+As(5)         5.752e-05
+   HAsO4-2         5.298e-05   5.298e-05    -4.276    -4.276    -0.000     (0)  
+   AsO4-3          4.438e-06   4.209e-07    -5.353    -6.376    -1.023     (0)  
+   H2AsO4-         9.883e-08   9.883e-08    -7.005    -7.005    -0.000     (0)  
+   H3AsO4          5.178e-15   5.298e-15   -14.286   -14.276     0.010     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.897e-02   7.523e-02    -1.005    -1.124    -0.119     (0)  
+   NaCl            1.030e-03   1.030e-03    -2.987    -2.987     0.000     (0)  
+   HCl             5.344e-12   5.344e-12   -11.272   -11.272     0.000     (0)  
+Cl(1)         0.000e+00
+   ClO-            0.000e+00   0.000e+00   -40.925   -41.035    -0.110     (0)  
+   HClO            0.000e+00   0.000e+00   -42.965   -42.965     0.000     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -73.730   -73.840    -0.110     (0)  
+   HClO2           0.000e+00   0.000e+00   -80.170   -80.170     0.000     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -92.679   -92.794    -0.114     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00  -115.934  -116.049    -0.114     (0)  
+H(0)          9.800e-22
+   H2              4.900e-22   5.019e-22   -21.310   -21.299     0.010     (0)  
+Na            1.013e-01
+   Na+             1.003e-01   7.786e-02    -0.999    -1.109    -0.110     (0)  
+   NaCl            1.030e-03   1.030e-03    -2.987    -2.987     0.000     (0)  
+   NaOH            4.079e-07   4.079e-07    -6.389    -6.389     0.000     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -49.611   -49.600     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Arsenolite      -24.63    -44.47  -19.84  As2O3
+  As              -27.72     14.97   42.68  As
+  As2O5           -35.14    -33.01    2.14  As2O5
+  As4O6(cubi)     -49.12    -88.94  -39.82  As4O6
+  As4O6(mono)     -48.89    -88.94  -40.05  As4O6
+  Cl2(g)          -49.04    -46.05    2.99  Cl2
+  Claudetite      -24.67    -44.47  -19.80  As2O3
+  Fix_H+           -9.50     -9.50    0.00  H+
+  H2(g)           -18.20    -21.30   -3.10  H2
+  H2O(g)           -1.59     -0.00    1.59  H2O
+  Halite           -3.80     -2.23    1.56  NaCl
+  HCl(g)          -16.93    -10.62    6.30  HCl
+  Ice              -0.14     -0.00    0.14  H2O
+  Na              -46.58     20.79   67.37  Na
+  Na(g)           -60.07     20.79   80.86  Na
+  Na2O            -50.64     16.78   67.42  Na2O
+  O2(g)           -46.71    -49.60   -2.89  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+-------------------------------------
+Reading input data for simulation 21.
+-------------------------------------
+
+	USE SURFACE 1
+	USE SOLUTION 1
+	EQUILIBRIUM_PHASES 1
+		Fix_H+ -10.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+	END
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	
+Using surface 1.	
+Using pure phase assemblage 1.	
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Fix_H+          -10.00   -10.00      0.00
+	 NaOH               is reactant       1.100e+01   1.100e+01  -1.455e-03
+
+------------------------------Surface composition------------------------------
+
+Diffuse Double Layer Surface-Complexation Model
+
+Surf          
+	 -6.112e-05  Surface charge, eq
+	 -2.184e-01  sigma, C/m²
+	 -1.271e-01  psi, V
+	  4.946e+00  -F*psi/RT
+	  1.406e+02  exp(-F*psi/RT)
+	  5.400e+01  specific area, m²/g
+	  2.700e+01  m² for   5.000e-01 g
+
+
+Surf_         
+	  8.966e-05  moles
+	                                   Mole                     Log
+	Species               Moles    Fraction    Molality    Molality
+
+	Surf_AsO4-2       3.655e-05       0.408   3.655e-05      -4.437
+	Surf_OH           3.557e-05       0.397   3.557e-05      -4.449
+	Surf_OH2+         1.476e-05       0.165   1.476e-05      -4.831
+	Surf_HAsO4-       1.999e-06       0.022   1.999e-06      -5.699
+	Surf_O-           7.820e-07       0.009   7.819e-07      -6.107
+	Surf_H2AsO4       4.353e-10       0.000   4.353e-10      -9.361
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As                6.145e-05   6.145e-05
+	Cl                1.000e-01   1.000e-01
+	Na                1.015e-01   1.015e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =  10.000      Charge balance
+                                       pe  =  -1.224      Adjusted to redox equilibrium
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.991e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   2.006e-04
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.193e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.60
+                               Iterations  =  27
+                                  Total H  = 1.110536e+02
+                                  Total O  = 5.552706e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   OH-             1.250e-04   9.602e-05    -3.903    -4.018    -0.114     (0)  
+   H+              1.201e-10   1.000e-10    -9.921   -10.000    -0.079      0.00
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     (0)  
+As(-3)        0.000e+00
+   AsH3            0.000e+00   0.000e+00   -70.955   -70.955     0.000     (0)  
+As(3)         7.421e-13
+   H2AsO3-         3.033e-13   2.354e-13   -12.518   -12.628    -0.110     (0)  
+   AsO2-           2.909e-13   2.258e-13   -12.536   -12.646    -0.110     (0)  
+   AsO2OH-2        6.520e-14   2.300e-14   -13.186   -13.638    -0.453     (0)  
+   HAsO2           4.417e-14   4.417e-14   -13.355   -13.355     0.000     (0)  
+   As(OH)3         3.849e-14   3.849e-14   -13.415   -13.415     0.000     (0)  
+As(5)         6.145e-05
+   HAsO4-2         4.855e-05   4.855e-05    -4.314    -4.314    -0.000     (0)  
+   AsO4-3          1.287e-05   1.219e-06    -4.890    -5.914    -1.024     (0)  
+   H2AsO4-         2.864e-08   2.864e-08    -7.543    -7.543    -0.000     (0)  
+   H3AsO4          4.744e-16   4.855e-16   -15.324   -15.314     0.010     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.897e-02   7.522e-02    -1.005    -1.124    -0.119     (0)  
+   NaCl            1.030e-03   1.030e-03    -2.987    -2.987     0.000     (0)  
+   HCl             1.690e-12   1.690e-12   -11.772   -11.772     0.000     (0)  
+Cl(1)         0.000e+00
+   ClO-            0.000e+00   0.000e+00   -41.572   -41.682    -0.110     (0)  
+   HClO            0.000e+00   0.000e+00   -44.112   -44.112     0.000     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -75.024   -75.134    -0.110     (0)  
+   HClO2           0.000e+00   0.000e+00   -81.964   -81.964     0.000     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -94.620   -94.734    -0.114     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00  -118.522  -118.637    -0.114     (0)  
+H(0)          4.347e-21
+   H2              2.173e-21   2.226e-21   -20.663   -20.652     0.010     (0)  
+Na            1.015e-01
+   Na+             1.004e-01   7.794e-02    -0.998    -1.108    -0.110     (0)  
+   NaCl            1.030e-03   1.030e-03    -2.987    -2.987     0.000     (0)  
+   NaOH            1.291e-06   1.291e-06    -5.889    -5.889     0.000     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -50.904   -50.894     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Arsenolite      -25.41    -45.25  -19.84  As2O3
+  As              -27.14     15.54   42.68  As
+  As2O5           -37.22    -35.08    2.14  As2O5
+  As4O6(cubi)     -50.68    -90.50  -39.82  As4O6
+  As4O6(mono)     -50.45    -90.50  -40.05  As4O6
+  Cl2(g)          -50.69    -47.69    2.99  Cl2
+  Claudetite      -25.46    -45.25  -19.80  As2O3
+  Fix_H+          -10.00    -10.00    0.00  H+
+  H2(g)           -17.55    -20.65   -3.10  H2
+  H2O(g)           -1.59     -0.00    1.59  H2O
+  Halite           -3.79     -2.23    1.56  NaCl
+  HCl(g)          -17.43    -11.12    6.30  HCl
+  Ice              -0.14     -0.00    0.14  H2O
+  Na              -45.76     21.61   67.37  Na
+  Na(g)           -59.24     21.61   80.86  Na
+  Na2O            -49.64     17.78   67.42  Na2O
+  O2(g)           -48.00    -50.89   -2.89  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+-------------------------------------
+Reading input data for simulation 22.
+-------------------------------------
+
+	USE SURFACE 1
+	USE SOLUTION 1
+	EQUILIBRIUM_PHASES 1
+		Fix_H+ -10.5 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+	END
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	
+Using surface 1.	
+Using pure phase assemblage 1.	
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Fix_H+          -10.50   -10.50      0.00
+	 NaOH               is reactant       1.100e+01   1.100e+01  -1.758e-03
+
+------------------------------Surface composition------------------------------
+
+Diffuse Double Layer Surface-Complexation Model
+
+Surf          
+	 -6.269e-05  Surface charge, eq
+	 -2.240e-01  sigma, C/m²
+	 -1.283e-01  psi, V
+	  4.992e+00  -F*psi/RT
+	  1.473e+02  exp(-F*psi/RT)
+	  5.400e+01  specific area, m²/g
+	  2.700e+01  m² for   5.000e-01 g
+
+
+Surf_         
+	  8.966e-05  moles
+	                                   Mole                     Log
+	Species               Moles    Fraction    Molality    Molality
+
+	Surf_OH           4.682e-05       0.522   4.682e-05      -4.330
+	Surf_AsO4-2       3.271e-05       0.365   3.271e-05      -4.485
+	Surf_OH2+         6.435e-06       0.072   6.435e-06      -5.191
+	Surf_O-           3.107e-06       0.035   3.107e-06      -5.508
+	Surf_HAsO4-       5.927e-07       0.007   5.926e-07      -6.227
+	Surf_H2AsO4       4.275e-11       0.000   4.275e-11     -10.369
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As                6.670e-05   6.670e-05
+	Cl                1.000e-01   1.000e-01
+	Na                1.018e-01   1.018e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =  10.500      Charge balance
+                                       pe  =  -2.005      Adjusted to redox equilibrium
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   1.002e-01
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   4.965e-04
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.194e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.60
+                               Iterations  =  28
+                                  Total H  = 1.110539e+02
+                                  Total O  = 5.552738e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   OH-             3.953e-04   3.036e-04    -3.403    -3.518    -0.115     (0)  
+   H+              3.797e-11   3.162e-11   -10.421   -10.500    -0.079      0.00
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     (0)  
+As(-3)        0.000e+00
+   AsH3            0.000e+00   0.000e+00   -69.835   -69.835     0.000     (0)  
+As(3)         7.115e-13
+   H2AsO3-         2.610e-13   2.025e-13   -12.583   -12.694    -0.110     (0)  
+   AsO2-           2.504e-13   1.943e-13   -12.601   -12.712    -0.110     (0)  
+   AsO2OH-2        1.776e-13   6.257e-14   -12.750   -13.204    -0.453     (0)  
+   HAsO2           1.202e-14   1.202e-14   -13.920   -13.920     0.000     (0)  
+   As(OH)3         1.047e-14   1.047e-14   -13.980   -13.980     0.000     (0)  
+As(5)         6.670e-05
+   HAsO4-2         3.623e-05   3.623e-05    -4.441    -4.441    -0.000     (0)  
+   AsO4-3          3.046e-05   2.878e-06    -4.516    -5.541    -1.025     (0)  
+   H2AsO4-         6.757e-09   6.757e-09    -8.170    -8.170    -0.000     (0)  
+   H3AsO4          3.540e-17   3.623e-17   -16.451   -16.441     0.010     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.896e-02   7.520e-02    -1.005    -1.124    -0.119     (0)  
+   NaCl            1.033e-03   1.033e-03    -2.986    -2.986     0.000     (0)  
+   HCl             5.341e-13   5.341e-13   -12.272   -12.272     0.000     (0)  
+Cl(1)         0.000e+00
+   ClO-            0.000e+00   0.000e+00   -42.133   -42.244    -0.110     (0)  
+   HClO            0.000e+00   0.000e+00   -45.174   -45.174     0.000     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -76.148   -76.258    -0.110     (0)  
+   HClO2           0.000e+00   0.000e+00   -83.588   -83.588     0.000     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -96.306   -96.420    -0.115     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00  -120.770  -120.884    -0.115     (0)  
+H(0)          1.585e-20
+   H2              7.923e-21   8.116e-21   -20.101   -20.091     0.010     (0)  
+Na            1.018e-01
+   Na+             1.007e-01   7.815e-02    -0.997    -1.107    -0.110     (0)  
+   NaCl            1.033e-03   1.033e-03    -2.986    -2.986     0.000     (0)  
+   NaOH            4.094e-06   4.094e-06    -5.388    -5.388     0.000     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -52.028   -52.018     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Arsenolite      -26.54    -46.38  -19.84  As2O3
+  As              -26.86     15.82   42.68  As
+  As2O5           -39.47    -37.34    2.14  As2O5
+  As4O6(cubi)     -52.94    -92.77  -39.82  As4O6
+  As4O6(mono)     -52.72    -92.77  -40.05  As4O6
+  Cl2(g)          -52.25    -49.25    2.99  Cl2
+  Claudetite      -26.59    -46.38  -19.80  As2O3
+  Fix_H+          -10.50    -10.50    0.00  H+
+  H2(g)           -16.99    -20.09   -3.10  H2
+  H2O(g)           -1.59     -0.00    1.59  H2O
+  Halite           -3.79     -2.23    1.56  NaCl
+  HCl(g)          -17.93    -11.62    6.30  HCl
+  Ice              -0.14     -0.00    0.14  H2O
+  Na              -44.97     22.40   67.37  Na
+  Na(g)           -58.46     22.40   80.86  Na
+  Na2O            -48.63     18.78   67.42  Na2O
+  O2(g)           -49.13    -52.02   -2.89  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+-------------------------------------
+Reading input data for simulation 23.
+-------------------------------------
+
+	USE SURFACE 1
+	USE SOLUTION 1
+	EQUILIBRIUM_PHASES 1
+		Fix_H+ -11.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+	END
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	
+Using surface 1.	
+Using pure phase assemblage 1.	
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Fix_H+          -11.00   -11.00      0.00
+	 NaOH               is reactant       1.100e+01   1.100e+01  -2.660e-03
+
+------------------------------Surface composition------------------------------
+
+Diffuse Double Layer Surface-Complexation Model
+
+Surf          
+	 -5.964e-05  Surface charge, eq
+	 -2.131e-01  sigma, C/m²
+	 -1.255e-01  psi, V
+	  4.885e+00  -F*psi/RT
+	  1.323e+02  exp(-F*psi/RT)
+	  5.400e+01  specific area, m²/g
+	  2.700e+01  m² for   5.000e-01 g
+
+
+Surf_         
+	  8.966e-05  moles
+	                                   Mole                     Log
+	Species               Moles    Fraction    Molality    Molality
+
+	Surf_OH           5.086e-05       0.567   5.086e-05      -4.294
+	Surf_AsO4-2       2.481e-05       0.277   2.481e-05      -4.605
+	Surf_O-           1.188e-05       0.133   1.188e-05      -4.925
+	Surf_OH2+         1.985e-06       0.022   1.985e-06      -5.702
+	Surf_HAsO4-       1.277e-07       0.001   1.276e-07      -6.894
+	Surf_H2AsO4       2.615e-12       0.000   2.615e-12     -11.583
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As                7.506e-05   7.507e-05
+	Cl                1.000e-01   1.000e-01
+	Na                1.027e-01   1.027e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =  11.000      Charge balance
+                                       pe  =  -2.789      Adjusted to redox equilibrium
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   1.012e-01
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   1.394e-03
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.191e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.59
+                               Iterations  =  29
+                                  Total H  = 1.110548e+02
+                                  Total O  = 5.552831e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   OH-             1.251e-03   9.602e-04    -2.903    -3.018    -0.115     (0)  
+   H+              1.201e-11   1.000e-11   -10.920   -11.000    -0.080      0.00
+   H2O             5.553e+01   9.966e-01     1.744    -0.002     0.000     (0)  
+As(-3)        0.000e+00
+   AsH3            0.000e+00   0.000e+00   -68.811   -68.811     0.000     (0)  
+As(3)         7.136e-13
+   AsO2OH-2        3.715e-13   1.304e-13   -12.430   -12.885    -0.455     (0)  
+   H2AsO3-         1.722e-13   1.335e-13   -12.764   -12.875    -0.111     (0)  
+   AsO2-           1.652e-13   1.281e-13   -12.782   -12.893    -0.111     (0)  
+   HAsO2           2.505e-15   2.505e-15   -14.601   -14.601     0.000     (0)  
+   As(OH)3         2.183e-15   2.183e-15   -14.661   -14.661     0.000     (0)  
+As(5)         7.506e-05
+   AsO4-3          5.466e-05   5.124e-06    -4.262    -5.290    -1.028     (0)  
+   HAsO4-2         2.040e-05   2.040e-05    -4.690    -4.690    -0.000     (0)  
+   H2AsO4-         1.203e-09   1.203e-09    -8.920    -8.920    -0.000     (0)  
+   H3AsO4          1.993e-18   2.040e-18   -17.701   -17.690     0.010     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.896e-02   7.512e-02    -1.005    -1.124    -0.120     (0)  
+   NaCl            1.040e-03   1.040e-03    -2.983    -2.983     0.000     (0)  
+   HCl             1.687e-13   1.687e-13   -12.773   -12.773     0.000     (0)  
+Cl(1)         0.000e+00
+   ClO-            0.000e+00   0.000e+00   -42.702   -42.812    -0.111     (0)  
+   HClO            0.000e+00   0.000e+00   -46.243   -46.243     0.000     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -77.285   -77.395    -0.111     (0)  
+   HClO2           0.000e+00   0.000e+00   -85.225   -85.225     0.000     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -98.011   -98.126    -0.115     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00  -123.043  -123.158    -0.115     (0)  
+H(0)          5.865e-20
+   H2              2.932e-20   3.004e-20   -19.533   -19.522     0.011     (0)  
+Na            1.027e-01
+   Na+             1.016e-01   7.877e-02    -0.993    -1.104    -0.111     (0)  
+   NaCl            1.040e-03   1.040e-03    -2.983    -2.983     0.000     (0)  
+   NaOH            1.305e-05   1.305e-05    -4.884    -4.884     0.000     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -53.165   -53.155     0.011     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Arsenolite      -27.90    -47.74  -19.84  As2O3
+  As              -26.69     15.99   42.68  As
+  As2O5           -41.97    -39.83    2.14  As2O5
+  As4O6(cubi)     -55.67    -95.49  -39.82  As4O6
+  As4O6(mono)     -55.44    -95.49  -40.05  As4O6
+  Cl2(g)          -53.82    -50.82    2.99  Cl2
+  Claudetite      -27.95    -47.74  -19.80  As2O3
+  Fix_H+          -11.00    -11.00    0.00  H+
+  H2(g)           -16.42    -19.52   -3.10  H2
+  H2O(g)           -1.59     -0.00    1.59  H2O
+  Halite           -3.79     -2.23    1.56  NaCl
+  HCl(g)          -18.43    -12.12    6.30  HCl
+  Ice              -0.14     -0.00    0.14  H2O
+  Na              -44.19     23.18   67.37  Na
+  Na(g)           -57.67     23.18   80.86  Na
+  Na2O            -47.63     19.79   67.42  Na2O
+  O2(g)           -50.26    -53.15   -2.89  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+-------------------------------------
+Reading input data for simulation 24.
+-------------------------------------
+
+-------------------------------
+End of Run after 0.233 Seconds.
+-------------------------------
+

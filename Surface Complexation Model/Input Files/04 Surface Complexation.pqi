@@ -1,0 +1,160 @@
+DATABASE C:\Program Files (x86)\USGS\Phreeqc Interactive 3.7.3-15968\database\llnl.dat
+TITLE 04_SURFACE_COMPLEXATION
+
+SOLUTION_MASTER_SPECIES
+As(+5)	H2AsO4-		0.0	As	74.92
+END
+
+SOLUTION_SPECIES
+AsO4-3 + H+ = HAsO4-2
+log_k		11.60
+AsO4-3 + 2H+ = H2AsO4-
+log_k		18.35
+AsO4-3 + 3H+ = H3AsO4
+log_k		20.60
+
+SURFACE_MASTER_SPECIES 
+Surf_ Surf_OH
+
+SURFACE_SPECIES
+Surf_OH = Surf_OH   						 #goethite surface protonation reactions 
+log_k		0.0
+Surf_OH + H+ = Surf_OH2+
+log_k		7.47
+Surf_OH = Surf_O- + H+
+log_k		-9.51            
+
+Surf_OH + AsO4-3 + 3H+ = Surf_H2AsO4 + H2O		#goethite surface complexation reactions
+log_k		31.00
+Surf_OH + AsO4-3 + 2H+ = Surf_HAsO4- + H2O
+log_k		26.81
+Surf_OH + AsO4-3 + H+ = Surf_AsO4-2 + H2O
+log_k		20.22
+END
+
+SURFACE 1 
+      -sites DENSITY	
+	Surf_OH		2.0     54     0.5		#name of binding site, (sites/site density), specific area per gram, grams
+END
+
+SELECTED_OUTPUT
+-file			output.xls
+-reset		true
+-molalities		AsO4-3   HAsO4-2   H2AsO4-   H3AsO4   Surf_AsO4-2  Surf_HAsO4-    Surf_H2AsO4
+END
+
+SOLUTION 1
+pH		3.0
+Cl		0.1		mol/kgw
+Na		0.1		mol/kgw
+As(+5)	0.100 	mmol/kgw
+END
+
+PHASES 
+     Fix_H+ 
+     H+ = H+ 
+     log_k  0.0 		#pseudo-
+END 
+
+USE SURFACE 1
+USE SOLUTION 1
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -3.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 1
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -3.5 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 1
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -4.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 1
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -4.5 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 1
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -5.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 1
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -5.5 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 1
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -6.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 1
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -6.5 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 1
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -7.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 1
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -7.5 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 1
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -8.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 1
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -8.5 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 1
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -9.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 1
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -9.5 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 1
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -10.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 1
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -10.5 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 1
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -11.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+

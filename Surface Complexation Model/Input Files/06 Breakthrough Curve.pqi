@@ -1,0 +1,245 @@
+DATABASE \\icnas3.cc.ic.ac.uk\jcb116\PhD Jay Bullen 2016-2019\Experimental\PHREEQC\Arsenic speciation (June 2017)\AsV\llnl_jay_modification.dat
+TITLE 06_BREAKTHROUGH_CURVE
+
+SOLUTION_MASTER_SPECIES
+As(+5)	H2AsO4-		0.0	As	74.92
+END
+
+SOLUTION_SPECIES
+AsO4-3 + H+ = HAsO4-2
+log_k		11.60
+AsO4-3 + 2H+ = H2AsO4-
+log_k		18.35
+AsO4-3 + 3H+ = H3AsO4
+log_k		20.60
+
+SURFACE_MASTER_SPECIES 
+Surf_ Surf_OH
+
+SURFACE_SPECIES
+Surf_OH = Surf_OH   						 #goethite surface protonation reactions 
+log_k		0.0
+Surf_OH + H+ = Surf_OH2+
+log_k		7.47
+Surf_OH = Surf_O- + H+
+log_k		-9.51            
+
+Surf_OH + AsO4-3 + 3H+ = Surf_H2AsO4 + H2O		#goethite surface complexation reactions
+log_k		31.00
+Surf_OH + AsO4-3 + 2H+ = Surf_HAsO4- + H2O
+log_k		26.81
+Surf_OH + AsO4-3 + H+ = Surf_AsO4-2 + H2O
+log_k		20.22
+END
+
+SURFACE 1 
+      -sites DENSITY	
+	Surf_OH		2.0     54     10.0		#name of binding site, (sites/site density), specific area per gram, grams
+END
+
+SELECTED_OUTPUT
+-file			output.xls
+-reset		true
+-molalities		AsO4-3   HAsO4-2   H2AsO4-   H3AsO4   Surf_AsO4-2  Surf_HAsO4-    Surf_H2AsO4
+END
+
+SOLUTION 1
+pH		7.0
+Cl		0.01		mol/kgw
+Na		0.01		mol/kgw
+As(+5)	00      	mg/kgw
+END
+
+SOLUTION 2
+pH		7.0
+Cl		0.01		mol/kgw
+Na		0.01		mol/kgw
+As(+5)	0.1      	mg/kgw
+END
+
+SOLUTION 3
+pH		7.0
+Cl		0.01		mol/kgw
+Na		0.01		mol/kgw
+As(+5)	1      	mg/kgw
+END
+
+SOLUTION 4
+pH		7.0
+Cl		0.01		mol/kgw
+Na		0.01		mol/kgw
+As(+5)	10      	mg/kgw
+END
+
+SOLUTION 5
+pH		7.0
+Cl		0.01		mol/kgw
+Na		0.01		mol/kgw
+As(+5)	20      	mg/kgw
+END
+
+SOLUTION 6
+pH		7.0
+Cl		0.01		mol/kgw
+Na		0.01		mol/kgw
+As(+5)	30      	mg/kgw
+END
+
+SOLUTION 7
+pH		7.0
+Cl		0.01		mol/kgw
+Na		0.01		mol/kgw
+As(+5)	50      	mg/kgw
+END
+
+SOLUTION 8
+pH		7.0
+Cl		0.01		mol/kgw
+Na		0.01		mol/kgw
+As(+5)	75      	mg/kgw
+END
+
+SOLUTION 9
+pH		7.0
+Cl		0.01		mol/kgw
+Na		0.01		mol/kgw
+As(+5)	100      	mg/kgw
+END
+
+SOLUTION 10
+pH		7.0
+Cl		0.01		mol/kgw
+Na		0.01		mol/kgw
+As(+5)	150      	mg/kgw
+END
+
+SOLUTION 11
+pH		7.0
+Cl		0.01		mol/kgw
+Na		0.01		mol/kgw
+As(+5)	200      	mg/kgw
+END
+
+SOLUTION 12
+pH		7.0
+Cl		0.01		mol/kgw
+Na		0.01		mol/kgw
+As(+5)	300      	mg/kgw
+END
+
+SOLUTION 13
+pH		7.0
+Cl		0.01		mol/kgw
+Na		0.01		mol/kgw
+As(+5)	400      	mg/kgw
+END
+
+SOLUTION 14
+pH		7.0
+Cl		0.01		mol/kgw
+Na		0.01		mol/kgw
+As(+5)	500    	mg/kgw
+END
+
+SOLUTION 15
+pH		7.0
+Cl		0.01		mol/kgw
+Na		0.01		mol/kgw
+As(+5)	700     	mg/kgw
+END
+
+PHASES 
+     Fix_H+ 
+     H+ = H+ 
+     log_k  0.0 		#pseudo-
+END 
+
+USE SURFACE 1
+USE SOLUTION 1
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -7.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 2
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -7.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 3
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -7.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 4
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -7.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 5
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -7.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 6
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -7.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 7
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -7.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 8
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -7.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 9
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -7.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 10
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -7.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 11
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -7.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 12
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -7.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 13
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -7.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 14
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -7.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END
+
+USE SURFACE 1
+USE SOLUTION 15
+EQUILIBRIUM_PHASES 1
+	Fix_H+ -7.0 NaOH 11.0 			#adds HNO3 as the Fix_H+ pseudo-phase to obtain a pH of exactly 6
+END

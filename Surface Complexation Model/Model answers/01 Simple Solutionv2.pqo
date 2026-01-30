@@ -1,0 +1,160 @@
+   Input file: C:\Users\weissd2k\OneDrive - Imperial College London\5 Teaching\Lectures\LabCourseEnvironGeochemistry\Modules\Ch 12 Adsorption Surface Complexation Models\Model answers\01 Simple Solution.pqi
+  Output file: C:\Users\weissd2k\OneDrive - Imperial College London\5 Teaching\Lectures\LabCourseEnvironGeochemistry\Modules\Ch 12 Adsorption Surface Complexation Models\Model answers\01 Simple Solutionv2.pqo
+Database file: C:\Program Files (x86)\USGS\Phreeqc Interactive 3.7.3-15968\database\llnl.dat
+
+------------------
+Reading data base.
+------------------
+
+	LLNL_AQUEOUS_MODEL_PARAMETERS
+	NAMED_EXPRESSIONS
+	SOLUTION_MASTER_SPECIES
+	SOLUTION_SPECIES
+	PHASES
+	EXCHANGE_MASTER_SPECIES
+	EXCHANGE_SPECIES
+	SURFACE_MASTER_SPECIES
+	SURFACE_SPECIES
+	RATES
+	END
+------------------------------------
+Reading input data for simulation 1.
+------------------------------------
+
+	DATABASE C:\Program Files (x86)\USGS\Phreeqc Interactive 3.7.3-15968\database\llnl.dat
+	TITLE 01_SIMPLE_SOLUTION
+	SOLUTION_MASTER_SPECIES
+	As(+5)	H2AsO4-		0.0	As	74.92
+	END
+-----
+TITLE
+-----
+
+ 01_SIMPLE_SOLUTION
+
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 2.
+------------------------------------
+
+	SOLUTION_SPECIES
+	AsO4-3 + H+ = HAsO4-2
+	log_k		11.60
+	AsO4-3 + 2H+ = H2AsO4-
+	log_k		18.35
+	AsO4-3 + 3H+ = H3AsO4
+	log_k		20.60
+	END
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 3.
+------------------------------------
+
+	SOLUTION 1
+	pH		7.0
+	Cl		0.1		mol/kgw
+	Na		0.1		mol/kgw
+	As(+5)	100		ug/kgw
+	END
+-------------------------------------------
+Beginning of initial solution calculations.
+-------------------------------------------
+
+Initial solution 1.	
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As(5)             1.335e-06   1.335e-06
+	Cl                1.000e-01   1.000e-01
+	Na                1.000e-01   1.000e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   7.000    
+                                       pe  =   4.000    
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.898e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   8.442e-07
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -2.179e-06
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.00
+                               Iterations  =   4
+                                  Total H  = 1.110507e+02
+                                  Total O  = 5.552533e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   OH-             1.249e-07   9.602e-08    -6.904    -7.018    -0.114     (0)  
+   H+              1.200e-07   1.000e-07    -6.921    -7.000    -0.079      0.00
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     (0)  
+As(5)         1.335e-06
+   HAsO4-2         8.394e-07   8.394e-07    -6.076    -6.076    -0.000     (0)  
+   H2AsO4-         4.951e-07   4.951e-07    -6.305    -6.305    -0.000     (0)  
+   AsO4-3          2.209e-10   2.108e-11    -9.656   -10.676    -1.020     (0)  
+   H3AsO4          8.205e-12   8.394e-12   -11.086   -11.076     0.010     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.898e-02   7.531e-02    -1.004    -1.123    -0.119     (0)  
+   NaCl            1.018e-03   1.018e-03    -2.992    -2.992     0.000     (0)  
+   HCl             1.691e-09   1.691e-09    -8.772    -8.772     0.000     (0)  
+Cl(1)         2.921e-37
+   HClO            2.168e-37   2.168e-37   -36.664   -36.664     0.000     (0)  
+   ClO-            7.527e-38   5.846e-38   -37.123   -37.233    -0.110     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -66.128   -66.238    -0.110     (0)  
+   HClO2           0.000e+00   0.000e+00   -70.068   -70.068     0.000     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -81.276   -81.390    -0.114     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00  -100.730  -100.844    -0.114     (0)  
+H(0)          1.550e-25
+   H2              7.749e-26   7.935e-26   -25.111   -25.100     0.010     (0)  
+Na            1.000e-01
+   Na+             9.898e-02   7.688e-02    -1.004    -1.114    -0.110     (0)  
+   NaCl            1.018e-03   1.018e-03    -2.992    -2.992     0.000     (0)  
+   NaOH            1.274e-09   1.274e-09    -8.895    -8.895     0.000     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -42.008   -41.998     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  As2O5           -28.74    -26.61    2.14  As2O5
+  Cl2(g)          -40.24    -37.24    2.99  Cl2
+  H2(g)           -22.00    -25.10   -3.10  H2
+  H2O(g)           -1.59     -0.00    1.59  H2O
+  Halite           -3.80     -2.24    1.56  NaCl
+  HCl(g)          -14.43     -8.12    6.30  HCl
+  Ice              -0.14     -0.00    0.14  H2O
+  Na              -50.99     16.38   67.37  Na
+  Na(g)           -64.47     16.38   80.86  Na
+  Na2O            -55.65     11.77   67.42  Na2O
+  O2(g)           -39.11    -42.00   -2.89  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 4.
+------------------------------------
+
+-------------------------------
+End of Run after 0.288 Seconds.
+-------------------------------
+
